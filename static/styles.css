@@ -1,0 +1,317 @@
+/* Algumas configurações universais que quero aplicar em todo o projeto */
+body,
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+:root {
+  --display: none;
+  --visibility: none;
+  --laranjacajui: #fd8900;
+  --fontsize1: 25px;
+  --fontsize2: 15px;
+}
+
+body {
+  background: #fbf1b4; /* Cor de fundo da identidade visual da Cajuí*/
+}
+
+/* Cabeçalho */
+
+#navbar img {
+  padding: 5px;
+  display: flex;
+  justify-content: flex-start;
+  width: 100px;
+  height: 100px;
+}
+
+#navbar {
+  justify-content: flex-start;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  background-color: var(--laranjacajui);
+  width: 100%;
+  height: fit-content;
+}
+
+#navbar p {
+  color: white;
+  margin: 0% 2%;
+  font-weight: 900;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+a #doeagora {
+  font-weight: 900;
+}
+
+/* Icone da lista suspensa */
+
+#list {
+  position: sticky;
+  width: 60px;
+  height: 30px;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: nowrap column;
+  background-color: var(--laranjacajui);
+  border-radius: 999px;
+}
+
+#list:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+/* Botões */
+
+button {
+  position: fixed;
+  right: 1%;
+  bottom: 1%;
+  display: block;
+  margin: auto;
+  font-weight: 900;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 25px;
+  font-weight: 500;
+  color: var(--laranjacajui);
+  text-shadow: none;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: transparent;
+  border: 1px solid #00000052;
+  transition: 0.5s ease;
+  user-select: none;
+}
+
+#doeagora:hover,
+:focus {
+  color: var(--laranjacajui);
+  background: #ffffff;
+  border: 1px solid #000000;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+}
+
+a {
+  animation: in 0.2s ease-in;
+  display: flex;
+  background-color: aliceblue;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px;
+  transition: all 0.5s;
+}
+
+a:hover {
+  background-color: #fbf1b4;
+  cursor: pointer;
+}
+
+#links {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: nowrap row;
+  font-size: var(--fontsize2);
+}
+
+a {
+  text-decoration: none;
+  color: #fd8900;
+}
+
+/* classe que esconde os botões */
+
+.hide {
+  display: var(--display);
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+/* Conteúdo: Textos, imagens */
+
+#alttext {
+  font-size: 12px;
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+section:hover #alttext {
+  visibility: visible;
+}
+
+section img:hover {
+  border: #ffff solid 10px;
+  box-shadow: var(--laranjacajui) 5px 5px;
+}
+
+section img {
+  display: block;
+  margin: 10% auto 0 auto;
+  width: 100%;
+  height: 100%;
+  max-width: 80%;
+  max-height: 1000px;
+  border: var(--laranjacajui) solid 10px;
+  border-radius: 9px;
+  box-shadow: rgb(255, 255, 255) 5px 5px;
+  transition: all 0.5s;
+}
+
+section {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+  max-height: 1000px;
+}
+
+/* Conteúdos tela inteira*/
+
+.blackbackground {
+  margin: 0 0 10% 0;
+  background-blend-mode: color;
+  background-color: #000000a8;
+  width: 100%;
+  height: 1259px;
+  display: flex;
+}
+
+#welcome {
+  background-size: cover;
+  background-image: url(/static/Images/fundo-social_solidariedade-doacoes-rio-grande-do-sul-carreta-empresa-kothe_fm_-51.webp);
+}
+
+#welcome h1 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 64px;
+  margin: auto;
+}
+
+#heroes {
+  background-size: cover;
+  background-image: url(/static/Images/doaçãogarrafasdgua.webp);
+}
+
+#heroes h1 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 64px;
+  margin: auto;
+}
+
+#textbox {
+  display: flex;
+  flex-flow: nowrap;
+}
+
+#content p {
+  justify-content: left;
+  align-items: flex-start;
+  display: flex;
+  margin: auto;
+  width: 50%;
+  height: 100%;
+}
+
+#content h1 {
+  font-size: xx-large;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  margin: auto 25%;
+}
+
+/* Animação da barra suspensa*/
+
+@keyframes in {
+  from {
+    font-size: 0;
+  }
+
+  to {
+    font-size: var(--fontsize2);
+  }
+}
+
+/* Media Queries */
+
+@media (max-width: 800px) {
+  a {
+    font-size: 10px;
+  }
+
+  section img {
+    display: block;
+    margin: 10% auto;
+    width: 80%;
+    height: 100%;
+    border-radius: 9px;
+  }
+
+  section {
+    margin: 10% auto;
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    max-height: 1000px;
+  }
+
+  #alttext {
+    display: flex;
+    font-size: 10px;
+    visibility: visible;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #textbox {
+    display: flex;
+    flex-flow: nowrap;
+  }
+
+  #content p {
+    font-size: 12px;
+    justify-content: left;
+    align-items: flex-start;
+    display: flex;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+  }
+
+  #content h1 {
+    font-size: 20px;
+    margin: auto 24%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+
+  #welcome {
+    background-position: center;
+  }
+
+  #heroes {
+    background-position: right;
+  }
+}

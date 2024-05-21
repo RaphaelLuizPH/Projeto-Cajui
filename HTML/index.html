@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link
+      rel="shortcut icon"
+      href="/static/Images/Logo/cajuí.png"
+      type="image/x-icon"
+    />
+    <meta
+      name="description"
+      content="Participe do nosso projeto e ajude as pessoas do Rio Grande do Sul que estão passando por dificuldades. Doe itens essenciais ou seja um voluntário."
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <meta charset="UTF-8" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajude o Rio Grande do Sul - Doe, Faça a Diferença!</title>
+  </head>
+  <body>
+    <!---Barra no topo da tela-->
+    <div id="navbar">
+      <img src="/static/Images/Logo/cajuí2.png" alt="logo cajuí" />
+      <p>CAJUÍ + RIO GRANDE DO SUL</p>
+    </div>
+    <button id="doeagora">DOE AGORA</button>
+    <!--- Botões Navegação-->
+    <div id="links" class="hidden">
+      <ul>
+        <ion-icon name="list" id="list" onclick="hide()"></ion-icon>
+        <a onclick="about()" class="botao">Sobre o Projeto</a>
+        <a class="botao">Seção de Herói</a>
+        <a class="botao">Como Ajudar</a>
+        <a class="botao">Depoimentos</a>
+        <a class="botao">Itens Necessários</a>
+        <a class="botao">FAQ</a>
+        <a id="doeagora" class="botao">Doe agora</a>
+      </ul>
+    </div>
+
+    <div class="blackbackground" id="welcome">
+      <h1>AJUDE O RIO GRANDE DO SUL</h1>
+    </div>
+    <!--Seção SOBRE O PROJETO-->
+    <section id="about">
+      <div id="content">
+        <h1 id="sobre">SOBRE O PROJETO</h1>
+        <div id="textbox">
+          <p>
+            Em meio aos desafios que enfrentamos, a solidariedade e a união são
+            nossas maiores forças. O nosso projeto nasceu com o objetivo de
+            apoiar aqueles que estão passando por dificuldades no Rio Grande do
+            Sul.
+            <br />
+            <br />
+            Acreditamos que, juntos, podemos fazer a diferença na vida de muitas
+            pessoas. Por isso, incentivamos a doação de itens essenciais e o
+            suporte comunitário. <br /><br />Cada contribuição, não importa o
+            tamanho, tem o poder de trazer alívio e esperança para aqueles que
+            mais precisam.
+          </p>
+        </div>
+      </div>
+
+      <img
+        src="/static/Images/Sobrevoo_das_áreas_afetadas_pelas_chuvas_em_Canoas.webp"
+        alt="Imagem de sobrevoo de Canoas, RS, 2024."
+      />
+      <p id="alttext">
+        Imagem de sobrevôo de Canoas, Rio Grande do Sul, 2024 Foto: Ricardo
+        Stuckert / PR Direitos autorais: Ricardo Stuckert / PR
+      </p>
+    </section>
+    <!--Seção HERÓI-->
+    <br /><br />
+    <div class="blackbackground" id="heroes">
+      <h1>SEÇÃO DE HERÓI</h1>
+    </div>
+    <section id="about">
+      <div id="content">
+        <h1 id="sobre">HERÓIS</h1>
+        <div id="textbox">
+          <p>
+            Doar é um ato de heroísmo. Não é necessário ter superpoderes ou uma
+            capa para fazer a diferença na vida de alguém. O verdadeiro heroísmo
+            reside na compaixão, na empatia e na vontade de ajudar.<br />
+            <br />
+            Cada doação, seja ela grande ou pequena, é um ato de coragem e
+            generosidade. É escolher colocar as necessidades de outra pessoa
+            antes das suas, é estender a mão para alguém que você pode nunca
+            conhecer, é dar sem esperar nada em troca. <br />
+            <br />
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script src="/static/script.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  </body>
+</html>
