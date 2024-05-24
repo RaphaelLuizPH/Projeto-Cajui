@@ -1,6 +1,7 @@
 /* Algumas configurações universais que quero aplicar em todo o projeto */
 body,
 html {
+  font-size: var(--fontsize2);
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
@@ -9,22 +10,32 @@ html {
   font-style: normal;
 }
 
-
 :root {
-  --display: none;
   --visibility: none;
   --laranjacajui: #fd8900;
-  --fontsize1: 25px;
-  --fontsize2: 15px;
+  --begecajui: #fbf1b4;
+  --fontsize1: 25px; /* Tamanho da fonte título */
+  --fontsize3: 20px;
+  --fontsize2: 15px; /* Tamanho da fonte texto */
+  --fontcolor: black;
+}
+
+/* classe que esconde os botões */
+
+.hide {
+  --display: none;
+  --opacity: 0; /* Opacity 0 permite utilizar transition */
+  transition: all 0.5s ease-in;
 }
 
 body {
-  background: #fbf1b4; /* Cor de fundo da identidade visual da Cajuí*/
+  background: var(--begecajui); /* Cor de fundo da identidade visual da Cajuí*/
 }
 
 /* Cabeçalho */
 
 #navbar img {
+  /* Logo Cajuí */
   padding: 5px;
   display: flex;
   justify-content: flex-start;
@@ -33,6 +44,7 @@ body {
 }
 
 #navbar {
+  /* Barra no  topo da tela */
   justify-content: flex-start;
   display: flex;
   text-align: center;
@@ -43,6 +55,7 @@ body {
 }
 
 #navbar p {
+  /* Texto: "Cajuí + Rio Grande do Sul */
   color: #ffffff;
   margin: 0% 2%;
   font-weight: 900;
@@ -53,12 +66,20 @@ body {
 }
 
 a #doeagora {
+  /* Botão doe agora */
   font-weight: 900;
 }
 
-/* Icone da lista suspensa */
+#doeagora:hover,
+:focus {
+  color: var(--laranjacajui);
+  background: #ffffff;
+  border: 1px solid #000000;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+}
 
 #list {
+  /* Icone da lista suspensa */
   z-index: 5;
   position: sticky;
   width: 60px;
@@ -69,12 +90,19 @@ a #doeagora {
   justify-content: center;
   flex-flow: nowrap column;
   background-color: var(--laranjacajui);
-  border-radius: 999px;
+  border-radius: 10px;
+  transition: all 0.5s;
 }
 
 #list:hover {
   background-color: white;
   cursor: pointer;
+}
+
+#list:active {
+  background-color: var(--begecajui);
+  cursor: pointer;
+  border-radius: 999px;
 }
 
 /* Botões */
@@ -101,14 +129,6 @@ button {
   user-select: none;
 }
 
-#doeagora:hover,
-:focus {
-  color: var(--laranjacajui);
-  background: #ffffff;
-  border: 1px solid #000000;
-  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
-}
-
 a {
   animation: in 0.2s ease-in;
   display: flex;
@@ -120,11 +140,12 @@ a {
 }
 
 a:hover {
-  background-color: #fbf1b4;
+  background-color: var(--begecajui);
   cursor: pointer;
 }
 
 #links {
+  /*Botoões da lista */
   z-index: 5;
   position: fixed;
   display: flex;
@@ -132,6 +153,17 @@ a:hover {
   justify-content: flex-start;
   flex-flow: nowrap row;
   font-size: var(--fontsize2);
+  pointer-events: auto;
+}
+
+#links .hide {
+  pointer-events: none; /* Faz com que os itens não sejam clicáveis em opacidade 0 */
+  opacity: var(--opacity);
+  animation-duration: 0.1s;
+}
+
+a:active {
+  font-size: var(--fontsize1);
 }
 
 a {
@@ -139,17 +171,41 @@ a {
   color: #fd8900;
 }
 
-/* classe que esconde os botões */
-
-.hide {
-  display: var(--display);
-  opacity: 0;
-  transition: all 0.5s;
-}
-
 /* Conteúdo: Textos, imagens */
 
+#content h1 {
+  font-size: var(--fontsize1);
+  display: flex;
+  align-items: left;
+  justify-content: center;
+}
+
+#content p {
+  font-size: var(--fontsize2);
+  margin: auto;
+  width: 80%;
+  height: 100%;
+}
+
+h2 {
+  display: flex;
+  color: var(--fontcolor);
+  text-align: center;
+  justify-content: right;
+  font-size: var(--fontsize3);
+  margin: auto;
+}
+
+li {
+  list-style: upper-roman;
+  margin: 5%;
+  background-color: #ffffff;
+  padding: 5%;
+  transition: all 0.5s ease-in;
+}
+
 #alttext {
+  /* Texto alternativa de imagens onde necessário*/
   font-size: 12px;
   visibility: hidden;
   justify-content: center;
@@ -158,6 +214,7 @@ a {
 }
 
 section:hover #alttext {
+  /*Texto alternativo viísvel em hover */
   visibility: visible;
 }
 
@@ -198,6 +255,8 @@ section {
   display: flex;
 }
 
+/* Seção 1 */
+
 #welcome {
   background-size: cover;
   background-image: url(/static/Images/fundo-social_solidariedade-doacoes-rio-grande-do-sul-carreta-empresa-kothe_fm_-51.webp);
@@ -210,6 +269,7 @@ section {
   margin: auto;
 }
 
+/* Seção 2 */
 #heroes {
   background-size: cover;
   background-image: url(/static/Images/doaçãogarrafasdgua.webp);
@@ -222,32 +282,33 @@ section {
   margin: auto;
 }
 
+/* Seção 3 */
+
+#howtohelp {
+  background-size: cover;
+  background-image: url(/static/Images/portao-bombeiros-06_0.webp);
+}
+
+#howtohelp h1 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 64px;
+  margin: auto;
+}
+
+/* Texto + Conteúdo */
+
 #textbox {
+  justify-content: center;
   display: flex;
   flex-flow: nowrap;
-}
-
-#content p {
-  justify-content: left;
-  align-items: flex-start;
-  display: flex;
   margin: auto;
-  width: 50%;
-  height: 100%;
-}
-
-#content h1 {
-  font-size: xx-large;
-  display: flex;
-  align-items: left;
-  justify-content: left;
-  margin: auto 25%;
 }
 
 /* Pessoas que doaram */
 
 .person {
-  text-align: left;
+  text-align: center;
   padding: 1px;
   margin: 1% auto;
   display: flex;
@@ -258,22 +319,37 @@ section {
   height: 50px;
   list-style: none;
   border-radius: 25px;
-  transition: all  0.1s;
+  transition: all 0.1s;
+}
+
+.person ion-icon {
+  width: 30px;
+  min-width: 100px;
+  height: 100%;
+  width: fit-content;
+}
+
+.person p {
+  text-align: center;
+  display: inline;
+  font-size: var(--fontsize2);
+}
+
+#username {
+  font-size: var(--fontsize2);
+  margin: 5% 0;
+  text-align: center;
 }
 
 #pessoa {
   background-color: #ffffff;
   margin-right: 6%;
-  font-size: 50px;
   border: #000000 solid;
   border-radius: 999px;
 }
 
-ul p {
-  margin: auto;
-}
-
 input {
+  width: 100%;
   border: 0;
   height: 50px;
   border-radius: 25px;
@@ -290,15 +366,13 @@ input:focus {
   border: var(--laranjacajui) 5px solid;
   border-radius: 999px;
   background-color: var(--laranjacajui);
-
 }
-
 
 /* Animação da barra suspensa*/
 
 @keyframes in {
   from {
-    font-size: 0;
+    font-size: 20px;
   }
 
   to {
@@ -309,6 +383,12 @@ input:focus {
 /* Media Queries */
 
 @media (max-width: 800px) {
+  :root {
+    --fontsize1: 20px;
+    --fontsize2: 11px;
+    --fontsize3: 15px;
+  }
+
   a {
     font-size: 10px;
   }
@@ -338,19 +418,11 @@ input:focus {
     align-items: flex-end;
   }
 
-  #textbox {
-    display: flex;
-    flex-flow: nowrap;
-  }
-
   #content p {
-    font-size: 12px;
-    justify-content: left;
-    align-items: flex-start;
-    display: flex;
+    font-size: var(--fontsize2);
     margin: auto;
-    width: 50%;
-    height: 50%;
+    width: 80%;
+    height: 100%;
   }
 
   #welcome {

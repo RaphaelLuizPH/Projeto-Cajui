@@ -115,39 +115,47 @@ const sobrenomes = [
 
 // Função para gerar um nome aleatório
 function Nome() {
-  setInterval(function() {
-  const nomes = [];
-  for (let i = 0; i < 3; i++) {
-    const primeiroNome =
-      primeirosNomes[Math.floor(Math.random() * primeirosNomes.length)];
-    const sobrenome = sobrenomes[Math.floor(Math.random() * sobrenomes.length)];
-    const sobrenome2 =
-      sobrenomes[Math.floor(Math.random() * sobrenomes.length)];
-    nomes.push(`${primeiroNome} ${sobrenome} ${sobrenome2} acabou de doar!`);
-  }
-  // Inserir o nome gerado no parágrafo com id "nomedapessoax"
-  document.getElementById("nomedapessoa").textContent = nomes[0];
-  document.getElementById("nomedapessoa2").textContent = nomes[1];
-  document.getElementById("nomedapessoa3").textContent = nomes[2];
+  setInterval(function () {
+    const nomes = [];
+    for (let i = 0; i < 3; i++) {
+      const primeiroNome =
+        primeirosNomes[Math.floor(Math.random() * primeirosNomes.length)];
+      const sobrenome =
+        sobrenomes[Math.floor(Math.random() * sobrenomes.length)];
+      const sobrenome2 =
+        sobrenomes[Math.floor(Math.random() * sobrenomes.length)];
+      nomes.push(`${primeiroNome} ${sobrenome} ${sobrenome2} acabou de doar!`);
+    }
+    // Inserir o nome gerado no parágrafo com id "nomedapessoax"
+    document.getElementById("nomedapessoa").textContent = nomes[0];
+    document.getElementById("nomedapessoa2").textContent = nomes[1];
+    document.getElementById("nomedapessoa3").textContent = nomes[2];
   }, 2000);
 }
 
 // Código para adicionar o nome do usuário
 
-let nomeuser = document // Evento que ouve a tecla enter sendo pressionada
+let nomeuser = document
   .getElementById("nomeusuario")
   .addEventListener("keydown", function (event) {
-      if (event.key === "Enter") {
-        userdonate();
-      }
+    // Evento que ouve a tecla enter sendo pressionada
+    if (event.key === "Enter") {
+      userdonate();
+    }
   });
 
 function userdonate() {
   const username = document.getElementById("nomeusuario").value;
-  if (username.length > 0) // Verifica se tem algo no input
-  document.getElementById("username").textContent = `${username} quer ser um herói!`;
-  else // Caso a caixa fique vazia, "você" fica no lugar do nome
-  document.getElementById("username").textContent = `Você quer ser um herói!`;
+  if (username.length > 0)
+    // Verifica se tem algo no input
+    document.getElementById(
+      "username"
+    ).textContent = `${username} quer ser um herói!`;
+  // Caso a caixa fique vazia, "você" fica no lugar do nome
+  else
+    document.getElementById("username").textContent = `Você quer ser um herói!`;
+
+  elements[i].classList.toggle("hide");
 }
 
 // Funções que fazem a página rolar até a seção selecionada
@@ -164,5 +172,10 @@ function about() {
 
 function heroes() {
   const about = document.getElementById("heroes");
+  about.scrollIntoView({ block: "start", behavior: "smooth" });
+}
+
+function howtohelp() {
+  const about = document.getElementById("howtohelp");
   about.scrollIntoView({ block: "start", behavior: "smooth" });
 }

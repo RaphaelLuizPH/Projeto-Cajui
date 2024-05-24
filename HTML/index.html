@@ -32,8 +32,8 @@
         <ion-icon name="list" id="list" onclick="hide()"></ion-icon>
         <a onclick="home()" class="botao">Início</a>
         <a onclick="about()" class="botao">Sobre o Projeto</a>
-        <a onclick="heroes()"  class="botao">Seção de Herói</a>
-        <a class="botao">Como Ajudar</a>
+        <a onclick="heroes()" class="botao">Seção de Herói</a>
+        <a onclick="howtohelp()" class="botao">Como Ajudar</a>
         <a class="botao">Depoimentos</a>
         <a class="botao">Itens Necessários</a>
         <a class="botao">FAQ</a>
@@ -111,40 +111,76 @@
         </li>
         <li class="person" id="usernameinput">
           <ion-icon name="person" id="pessoa"></ion-icon>
-
           <input
+            inputmode="latin-name"
             id="nomeusuario"
             autocomplete="off"
             oninput="Nome()"
             type="text"
             style="border: none"
-            autofocus
-            maxlength="15"
             placeholder=" Seu nome aqui"
           />
-          <p id="username"></p>
         </li>
       </ul>
+      <p id="username"></p>
     </section>
     <!--Seção Como ajudar-->
-    <div class="blackbackground" id="howtohelp"></div>
+    <div class="blackbackground" id="howtohelp">
+      <h1>COMO AJUDAR</h1>
+    </div>
     <section id="about">
       <div id="content">
-        <h1 id="sobre">HERÓIS</h1>
+        <h1>Formas de contribuir:</h1>
+
         <div id="textbox">
-          <p>
-            Doar é um ato de heroísmo. Não é necessário ter superpoderes ou uma
-            capa para fazer a diferença na vida de alguém. O verdadeiro heroísmo
-            reside na compaixão, na empatia e na vontade de ajudar.<br />
-            <br />
-            Cada doação, seja ela grande ou pequena, é um ato de coragem e
-            generosidade. É escolher colocar as necessidades de outra pessoa
-            antes das suas, é estender a mão para alguém que você pode nunca
-            conhecer, é dar sem esperar nada em troca. <br />
-            <br />
-          </p>
+          <h2>Voluntariado</h2>
         </div>
+
+        <p>
+          Se você está na região ou pode se deslocar até lá, considere oferecer
+          seu tempo como voluntário. Muitas equipes precisam de ajuda para
+          distribuir donativos, montar abrigos temporários e oferecer apoio
+          emocional às vítimas.
+          <br />
+          <br />
+        </p>
+
+        <div id="textbox">
+          <h2>Divulgação</h2>
+        </div>
+        <p>
+          A disseminação de informações corretas e atualizadas também é uma
+          forma de ajudar. Compartilhe nas suas redes sociais as formas de
+          doação e os esforços de socorro, sempre verificando a veracidade das
+          informações para evitar a propagação de fake news.
+          <br />
+          <br />
+        </p>
+        <div id="textbox">
+          <h2>Doações</h2>
+        </div>
+        <p>
+          Organizações locais e nacionais estão arrecadando fundos para fornecer
+          assistência imediata e a longo prazo às vítimas. Considere fazer uma
+          doação para uma das instituições confiáveis listadas abaixo.
+        </p>
       </div>
+
+      <li>
+        Cruz Vermelha Brasileira: Aceita doações financeiras que são usadas para
+        suprir necessidades emergenciais como alimentos, água, medicamentos e
+        abrigo.
+      </li>
+
+      <li>
+        Defesa Civil: Muitas vezes, aceita doações diretamente ou pode fornecer
+        informações sobre onde doar.
+      </li>
+      <li>
+        Organizações Não Governamentais (ONGs): Muitas ONGs locais estão no
+        terreno ajudando as vítimas e precisam de recursos financeiros para
+        continuar seu trabalho.
+      </li>
     </section>
 
     <script src="/static/script.js"></script>
