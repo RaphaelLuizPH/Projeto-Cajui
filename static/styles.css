@@ -42,7 +42,7 @@ body {
 }
 
 #navbar p {
-  color: white;
+  color: #ffffff;
   margin: 0% 2%;
   font-weight: 900;
   display: flex;
@@ -277,11 +277,13 @@ section {
   }
 
   #alttext {
+    margin: 10%;
     display: flex;
-    font-size: 10px;
+    font-size: 12px;
     visibility: visible;
     justify-content: center;
-    align-items: center;
+    align-items:flex-end
+    
   }
 
   #textbox {
@@ -299,13 +301,6 @@ section {
     height: 50%;
   }
 
-  #content h1 {
-    font-size: 20px;
-    margin: auto 24%;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-  }
 
   #welcome {
     background-position: center;
