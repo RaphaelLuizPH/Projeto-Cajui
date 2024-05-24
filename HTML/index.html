@@ -30,8 +30,9 @@
     <div id="links" class="hidden">
       <ul>
         <ion-icon name="list" id="list" onclick="hide()"></ion-icon>
+        <a onclick="home()" class="botao">Início</a>
         <a onclick="about()" class="botao">Sobre o Projeto</a>
-        <a class="botao">Seção de Herói</a>
+        <a onclick="heroes()"  class="botao">Seção de Herói</a>
         <a class="botao">Como Ajudar</a>
         <a class="botao">Depoimentos</a>
         <a class="botao">Itens Necessários</a>
@@ -78,6 +79,55 @@
     <div class="blackbackground" id="heroes">
       <h1>SEÇÃO DE HERÓI</h1>
     </div>
+    <section id="herosection">
+      <div id="content">
+        <h1>HERÓIS</h1>
+        <div id="textbox">
+          <p>
+            Doar é um ato de heroísmo. Não é necessário ter superpoderes ou uma
+            capa para fazer a diferença na vida de alguém. O verdadeiro heroísmo
+            reside na compaixão, na empatia e na vontade de ajudar.<br />
+            <br />
+            Cada doação, seja ela grande ou pequena, é um ato de coragem e
+            generosidade. É escolher colocar as necessidades de outra pessoa
+            antes das suas, é estender a mão para alguém que você pode nunca
+            conhecer, é dar sem esperar nada em troca. <br />
+            <br />
+          </p>
+        </div>
+      </div>
+      <ul>
+        <li class="person">
+          <ion-icon name="person" id="pessoa"></ion-icon>
+          <p id="nomedapessoa">Tenha em você</p>
+        </li>
+        <li class="person">
+          <ion-icon name="person" id="pessoa"></ion-icon>
+          <p id="nomedapessoa2">a bondade que espera</p>
+        </li>
+        <li class="person">
+          <ion-icon name="person" id="pessoa"></ion-icon>
+          <p id="nomedapessoa3">dos outros</p>
+        </li>
+        <li class="person" id="usernameinput">
+          <ion-icon name="person" id="pessoa"></ion-icon>
+
+          <input
+            id="nomeusuario"
+            autocomplete="off"
+            oninput="Nome()"
+            type="text"
+            style="border: none"
+            autofocus
+            maxlength="15"
+            placeholder=" Seu nome aqui"
+          />
+          <p id="username"></p>
+        </li>
+      </ul>
+    </section>
+    <!--Seção Como ajudar-->
+    <div class="blackbackground" id="howtohelp"></div>
     <section id="about">
       <div id="content">
         <h1 id="sobre">HERÓIS</h1>
@@ -93,7 +143,6 @@
             conhecer, é dar sem esperar nada em troca. <br />
             <br />
           </p>
-          <span class="person"></span>
         </div>
       </div>
     </section>

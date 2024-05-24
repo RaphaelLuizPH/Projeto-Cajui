@@ -28,13 +28,13 @@ Clique no link.
 
 As imagens utilizadas nesse projeto não são de minha autoria e estão todas disponíveis na internet. 
 
-Os ícones utilizados nesse projeto são do serviço Ionicons.com. 
+Os ícones utilizados nesse projeto são do serviço [Ionicons](https://ionic.io/ionicons/v4). 
 
 ## Cores 
 
 O projeto usa as cores da paleta da Cajuí. 
 
-Laranja: #fd8900
-Bege: #fbf1b4
-Branco: #ffffff
+- Laranja: #fd8900
+- Bege: #fbf1b4
+- Branco: #ffffff
 
