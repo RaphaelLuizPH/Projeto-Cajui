@@ -88,6 +88,10 @@ a #doeagora {
   width: 60px;
   height: 30px;
   font-size: 25px;
+  background-image: url(/static/svg/menu.svg);
+  background-position: center;
+  background-size:contain;
+  background-repeat: no-repeat;
   background-color: var(--laranjacajui);
   border-radius: 10px;
   transition: all 0.5s;
@@ -405,8 +409,8 @@ input:focus {
 #pessoatweet2 {
   align-self: center;
   margin: 5%;
-  width: 60px;
-  height: 60px;
+  min-width: 60px;
+  min-height: 60px;
   border: #0c0c0c solid 5px;
   border-radius: 999px;
   background-image: url(https://images.pexels.com/photos/11900800/pexels-photo-11900800.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
@@ -455,6 +459,7 @@ input:focus {
 }
 
 .heart {
+  margin-top: 10px;
   display: flex;
   color: var(--laranjacajui);
   font-size: 25px;

@@ -11,7 +11,7 @@
       name="description"
       content="Nosso projeto busca incentivar a ajuda as pessoas do Rio Grande do Sul que estão passando por dificuldades após fortes enchentes através da doação de itens essenciais, voluntários e compartilhamento de informação"
     />
-    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="static/styles.css" />
     <meta charset="UTF-8" />
 
     <style>
@@ -30,14 +30,14 @@
     <!--- Botões Navegação-->
     <div id="links" class="hidden">
       <ul>
-        <ion-icon name="list" id="list" onclick="hide()"></ion-icon>
+        <div name="list" id="list" onclick="hide()"></div>
         <a onclick="home()" class="botao">Início</a>
         <a onclick="about()" class="botao">Sobre o Projeto</a>
         <a onclick="heroes()" class="botao">Seção de Herói</a>
         <a onclick="howtohelp()" class="botao">Como Ajudar</a>
         <a onclick="depoimentos()" class="botao">Depoimentos</a>
         <a onclick="itens()" class="botao">Itens Necessários</a>
-        <a  onclick="FAQ()" class="botao">FAQ</a>
+        <a onclick="FAQ()" class="botao">FAQ</a>
         <a class="botao">Doe agora</a>
       </ul>
     </div>
@@ -198,11 +198,10 @@
             <div class="dadostweet">
               <p>Ana Siqueira <span>@Ani</span> <br /></p>
               <p id="textotweet1"></p>
-              <br /><ion-icon
-                name="heart-empty"
-                class="heart"
-                onclick="like()"
-              ></ion-icon>
+              <br />
+              <ion-icon name="heart-empty" class="heart" onclick="like()">
+              </ion-icon>
+
               <br />
             </div>
           </div>
@@ -386,7 +385,7 @@
       </div>
     </section>
 
-    <script src="/static/script.js"></script>
+    <script src="static/script.js"></script>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   </body>
 </html>
