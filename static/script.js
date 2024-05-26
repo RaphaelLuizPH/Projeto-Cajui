@@ -175,7 +175,7 @@ function typejs() {
 
   var typed = new Typed("#textotweet1", {
     strings: [
-      "                 Só tenho a agradecer a ajuda que vocês estão nos proporcionando.Receber roupas, cobertores e produtos de higiene nos ajudou a manter a saúde e o bem-estar da minha família.",
+      "                 Só tenho a agradecer a ajuda que vocês estão nos proporcionando. Receber roupas, cobertores e produtos de higiene nos ajudou a manter a saúde e o bem-estar da minha família.",
     ],
     typeSpeed: 50,
   });
