@@ -88,7 +88,7 @@ a #doeagora {
   width: 60px;
   height: 30px;
   font-size: 25px;
-  background-image: url(static/svg/menu.svg);
+  background-image: url(/static/svg/menu.svg);
   background-position: center;
   background-size:contain;
   background-repeat: no-repeat;
@@ -280,13 +280,13 @@ section #canoas {
 
 #welcome {
   background-size: cover;
-  background-image: url(static/Images/fundo-social_solidariedade-doacoes-rio-grande-do-sul-carreta-empresa-kothe_fm_-51.webp);
+  background-image: url(/static/Images/fundo-social_solidariedade-doacoes-rio-grande-do-sul-carreta-empresa-kothe_fm_-51.webp);
 }
 
 /* Seção 2 */
 #heroes {
   background-size: cover;
-  background-image: url(static/Images/doaçãogarrafasdgua.webp);
+  background-image: url(/static/Images/doaçãogarrafasdgua.webp);
 }
 
 /* Pessoas que doaram */
@@ -362,13 +362,13 @@ input:focus {
 
 #howtohelp {
   background-size: cover;
-  background-image: url(static/Images/portao-bombeiros-06_0.webp);
+  background-image: url(/static/Images/portao-bombeiros-06_0.webp);
 }
 
 /* Seção 4 */
 #depoimentos {
   background-size: cover;
-  background-image: url(static/Images/barco.webp);
+  background-image: url(/static/Images/barco.webp);
 }
 
 /*  Tweets */
@@ -478,7 +478,7 @@ input:focus {
 
 #itens {
   background-size: cover;
-  background-image: url(static/Images/img_9710_upscayl_4x_ultrasharp.png);
+  background-image: url(/static/Images/img_9710_upscayl_4x_ultrasharp.png);
 }
 
 .itemlist {
@@ -518,7 +518,7 @@ input:focus {
 
 #FAQ {
   background-size: cover;
-  background-image: url(static/Images/53700509176_5474838ce1_o.webp);
+  background-image: url(/static/Images/53700509176_5474838ce1_o.webp);
 }
 
 
