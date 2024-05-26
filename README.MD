@@ -22,6 +22,7 @@ Clique no link.
 - CSS3 
 - JavaScript 
 - Ferramentas de SEO: Lighthouse para análise de desempenho. 
+- Bibliteca Typed.js
 * Não foram utilizados frameworks. 
 
 ## Das mídias utilizadas

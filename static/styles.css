@@ -2,7 +2,7 @@
 body,
 html {
   font-size: var(--fontsize2);
-  scroll-behavior: smooth;
+  /*scroll-behavior: smooth;*/
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
@@ -17,6 +17,7 @@ html {
   --fontsize1: 25px; /* Tamanho da fonte título */
   --fontsize3: 20px;
   --fontsize2: 15px; /* Tamanho da fonte texto */
+  --fontsize4: 64px;
   --fontcolor: black;
 }
 
@@ -39,8 +40,8 @@ body {
   padding: 5px;
   display: flex;
   justify-content: flex-start;
-  width: 100px;
-  height: 100px;
+  max-width: 100%;
+  max-height: 100px;
 }
 
 #navbar {
@@ -80,22 +81,21 @@ a #doeagora {
 
 #list {
   /* Icone da lista suspensa */
+  margin: auto;
+  opacity: 0.5;
   z-index: 5;
   position: sticky;
   width: 60px;
   height: 30px;
   font-size: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: nowrap column;
   background-color: var(--laranjacajui);
   border-radius: 10px;
   transition: all 0.5s;
 }
 
 #list:hover {
-  background-color: white;
+  opacity: 1;
+  background-color: rgb(255, 255, 255);
   cursor: pointer;
 }
 
@@ -130,9 +130,8 @@ button {
 }
 
 a {
-  animation: in 0.2s ease-in;
   display: flex;
-  background-color: aliceblue;
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
   padding: 15px;
   margin: 10px;
@@ -146,11 +145,12 @@ a:hover {
 
 #links {
   /*Botoões da lista */
+  right: 0;
   z-index: 5;
   position: fixed;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-flow: nowrap row;
   font-size: var(--fontsize2);
   pointer-events: auto;
@@ -172,6 +172,15 @@ a {
 }
 
 /* Conteúdo: Textos, imagens */
+
+/* Texto + Conteúdo */
+
+#textbox {
+  justify-content: center;
+  display: flex;
+  flex-flow: nowrap;
+  margin: auto;
+}
 
 #content h1 {
   font-size: var(--fontsize1);
@@ -196,10 +205,11 @@ h2 {
   margin: auto;
 }
 
-li {
+.instlist {
+  color: white;
   list-style: upper-roman;
   margin: 5%;
-  background-color: #ffffff;
+  background-color: var(--laranjacajui);
   padding: 5%;
   transition: all 0.5s ease-in;
 }
@@ -213,29 +223,6 @@ li {
   display: flex;
 }
 
-section:hover #alttext {
-  /*Texto alternativo viísvel em hover */
-  visibility: visible;
-}
-
-section img:hover {
-  border: #ffff solid 10px;
-  box-shadow: var(--laranjacajui) 5px 5px;
-}
-
-section img {
-  display: block;
-  margin: 10% auto 0 auto;
-  width: 100%;
-  height: 100%;
-  max-width: 80%;
-  max-height: 1000px;
-  border: var(--laranjacajui) solid 10px;
-  border-radius: 9px;
-  box-shadow: rgb(255, 255, 255) 5px 5px;
-  transition: all 0.5s;
-}
-
 section {
   margin: 5% auto;
   width: 100%;
@@ -245,6 +232,13 @@ section {
 }
 
 /* Conteúdos tela inteira*/
+
+.bigtitle {
+  color: #ffffff;
+  text-align: center;
+  font-size: var(--fontsize4);
+  margin: auto;
+}
 
 .blackbackground {
   margin: 0 0 10% 0;
@@ -257,52 +251,38 @@ section {
 
 /* Seção 1 */
 
+section:hover #alttext {
+  /*Texto alternativo viísvel em hover */
+  visibility: visible;
+}
+
+section #canoas:hover {
+  border: #ffff solid 10px;
+  box-shadow: var(--laranjacajui) 5px 5px;
+}
+
+section #canoas {
+  display: block;
+  margin: 10% auto 0 auto;
+  width: 100%;
+  height: 100%;
+  max-width: 80%;
+  max-height: 1000px;
+  border: var(--laranjacajui) solid 10px;
+  border-radius: 9px;
+  box-shadow: rgb(255, 255, 255) 5px 5px;
+  transition: all 0.5s;
+}
+
 #welcome {
   background-size: cover;
   background-image: url(/static/Images/fundo-social_solidariedade-doacoes-rio-grande-do-sul-carreta-empresa-kothe_fm_-51.webp);
-}
-
-#welcome h1 {
-  color: #ffffff;
-  text-align: center;
-  font-size: 64px;
-  margin: auto;
 }
 
 /* Seção 2 */
 #heroes {
   background-size: cover;
   background-image: url(/static/Images/doaçãogarrafasdgua.webp);
-}
-
-#heroes h1 {
-  color: #ffffff;
-  text-align: center;
-  font-size: 64px;
-  margin: auto;
-}
-
-/* Seção 3 */
-
-#howtohelp {
-  background-size: cover;
-  background-image: url(/static/Images/portao-bombeiros-06_0.webp);
-}
-
-#howtohelp h1 {
-  color: #ffffff;
-  text-align: center;
-  font-size: 64px;
-  margin: auto;
-}
-
-/* Texto + Conteúdo */
-
-#textbox {
-  justify-content: center;
-  display: flex;
-  flex-flow: nowrap;
-  margin: auto;
 }
 
 /* Pessoas que doaram */
@@ -362,21 +342,278 @@ input:focus {
   border-radius: 25px;
 }
 
+#usernameinput:after {
+  content: "\2190	";
+  padding: 25px;
+  font-size: 20px;
+}
+
 #usernameinput:hover {
   border: var(--laranjacajui) 5px solid;
   border-radius: 999px;
   background-color: var(--laranjacajui);
 }
 
-/* Animação da barra suspensa*/
+/* Seção 3 */
 
-@keyframes in {
-  from {
-    font-size: 20px;
+#howtohelp {
+  background-size: cover;
+  background-image: url(/static/Images/portao-bombeiros-06_0.webp);
+}
+
+/* Seção 4 */
+#depoimentos {
+  background-size: cover;
+  background-image: url(/static/Images/barco.webp);
+}
+
+/*  Tweets */
+
+.tweet {
+  margin: 5%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: left;
+  width: 500px;
+  height: fit-content;
+  background-color: white;
+  border-radius: 20px;
+  transition: all 0.5s;
+}
+
+.tweet:hover {
+  box-shadow: #05050533 5px 5px 50px;
+  width: 600px;
+  height: max-content;
+}
+
+#pessoatweet {
+  align-self: center;
+  margin: 5%;
+  width: 60px;
+  height: 60px;
+  border: #0c0c0c solid 5px;
+  border-radius: 999px;
+  background-image: url(https://cdn.inspiredot.net/wp-content/uploads/2020/02/Check-Out-These-20-Curious-Facts-About-Working-Out-That-Most-People-Don%E2%80%99t-Know-About20-1200x800.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#pessoatweet2 {
+  align-self: center;
+  margin: 5%;
+  width: 60px;
+  height: 60px;
+  border: #0c0c0c solid 5px;
+  border-radius: 999px;
+  background-image: url(https://images.pexels.com/photos/11900800/pexels-photo-11900800.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#pessoatweet3 {
+  align-self: center;
+  margin: 5%;
+  width: 60px;
+  height: 60px;
+  border: #0c0c0c solid 5px;
+  border-radius: 999px;
+  background-image: url(https://cdn.iportal.ru/news/2015/99/preview/484c4f64c942fd2741fa63e9412dd1280e639642_1000.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.dadostweet p {
+  display: inline;
+}
+
+.dadostweet {
+  position: flex;
+  width: 400px;
+  height: fit-content;
+  padding: 5px;
+}
+
+.dadostweet span {
+  color: #0000004d;
+}
+
+#tweetbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  flex-flow: row nowrap;
+}
+
+.heart {
+  display: flex;
+  color: var(--laranjacajui);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.heart:active {
+  opacity: 0.5;
+}
+
+.heart:hover {
+  fill: red;
+}
+
+/*Seção 5 */
+
+#itens {
+  background-size: cover;
+  background-image: url(/static/Images/img_9710_upscayl_4x_ultrasharp.png);
+}
+
+.itemlist {
+  justify-content: space-between;
+  display: flex;
+  flex-flow: wrap row;
+  margin: auto;
+  width: 90%;
+  max-height: fit-content;
+}
+
+.itemsquare {
+  text-align: center;
+  padding: 15px;
+  max-width: 300px;
+  max-height: 200px;
+  margin: 5% auto;
+}
+
+.itemname {
+  text-align: center;
+  font-weight: 900;
+  font-size: var(--fontsize3);
+}
+
+.item {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.item:hover {
+  animation: wiggle 1s linear infinite;
+}
+
+/* Seção 6 */
+
+#FAQ {
+  background-size: cover;
+  background-image: url(/static/Images/53700509176_5474838ce1_o.webp);
+}
+
+
+
+details {
+  text-align: left;
+  max-width: 550px;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 3%;
+  border-radius: 9px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-self: center;
+  transition: all 0.2s;
+}
+
+details:hover {
+  max-width: 600px;
+}
+
+details[open] summary {
+  height: auto;
+  color: var(--laranjacajui);
+}
+
+details[open] p::before {
+  content: "\21B3";
+  margin: 1%;
+}
+
+details[open] summary::after {
+  content: "\00D7";
+}
+
+details[open] p {
+  background-color: var(--begecajui);
+  padding: 10px;
+  border-radius: 9px;
+}
+
+
+summary:after {
+  content: "\002B";
+  color: var(--laranjacajui);
+  font-size: 20px;
+  text-align: right;
+}
+
+summary {
+  justify-content: space-between;
+  text-align: left;
+  transition: all 1s;
+  border: none;
+  display: flex;
+  user-select: none;
+}
+
+summary:focus {
+  border: none;
+}
+
+summary::marker {
+  display: none;
+}
+
+
+.questionmarkicon{
+  display: flex;
+  align-items: center;
+  max-width: 25px;
+  max-height: 50px;
+}
+
+/* Animação */
+
+@keyframes wiggle {
+  0%,
+  7% {
+    transform: rotateZ(0);
   }
-
-  to {
-    font-size: var(--fontsize2);
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%,
+  100% {
+    transform: rotateZ(0);
   }
 }
 
@@ -387,6 +624,7 @@ input:focus {
     --fontsize1: 20px;
     --fontsize2: 11px;
     --fontsize3: 15px;
+    --fontsize4: 48px;
   }
 
   a {
@@ -418,11 +656,17 @@ input:focus {
     align-items: flex-end;
   }
 
+
+
   #content p {
     font-size: var(--fontsize2);
     margin: auto;
     width: 80%;
     height: 100%;
+  }
+
+  #FAQ {
+    background-position: center;
   }
 
   #welcome {
@@ -431,5 +675,79 @@ input:focus {
 
   #heroes {
     background-position: right;
+  }
+
+  .dadostweet {
+    width: 300px;
+  }
+
+  .itemlist {
+    justify-content: space-around;
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .itemsquare {
+    text-align: left;
+    max-width: 150px;
+    max-height: 100px;
+    margin: 10% auto;
+  }
+
+  .itemname {
+    text-align: center;
+    font-weight: 900;
+    font-size: var(--fontsize3);
+  }
+
+  .item {
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    transition: all 0.5s;
+  }
+
+  .item:hover {
+    animation: none;
+  }
+
+
+  summary::before {
+    padding-right: 15px;
+    content: "\002B";
+    color: var(--laranjacajui);
+    font-size: 20px;
+    text-align: right;
+  }
+
+  summary::after {
+    content: none;
+  }
+
+  details[open] summary::before{
+    content: "\00D7";
+  }
+
+  details[open] summary::after{
+    content: none;
+  }
+
+
+  summary {
+    justify-content: center;
+    align-items: center;
+  }
+
+  details {
+    max-width: 80%
+  }
+
+  details:hover {
+    max-width: 90%;
+  }
+
+  .questionmarkicon {
+    display: none;
   }
 }

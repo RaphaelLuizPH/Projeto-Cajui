@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <link
       rel="shortcut icon"
       href="/static/Images/Logo/cajuí.png"
@@ -8,7 +9,7 @@
     />
     <meta
       name="description"
-      content="Participe do nosso projeto e ajude as pessoas do Rio Grande do Sul que estão passando por dificuldades. Doe itens essenciais ou seja um voluntário."
+      content="Nosso projeto busca incentivar a ajuda as pessoas do Rio Grande do Sul que estão passando por dificuldades após fortes enchentes através da doação de itens essenciais, voluntários e compartilhamento de informação"
     />
     <link rel="stylesheet" href="/static/styles.css" />
     <meta charset="UTF-8" />
@@ -34,15 +35,15 @@
         <a onclick="about()" class="botao">Sobre o Projeto</a>
         <a onclick="heroes()" class="botao">Seção de Herói</a>
         <a onclick="howtohelp()" class="botao">Como Ajudar</a>
-        <a class="botao">Depoimentos</a>
-        <a class="botao">Itens Necessários</a>
-        <a class="botao">FAQ</a>
+        <a onclick="depoimentos()" class="botao">Depoimentos</a>
+        <a onclick="itens()" class="botao">Itens Necessários</a>
+        <a  onclick="FAQ()" class="botao">FAQ</a>
         <a class="botao">Doe agora</a>
       </ul>
     </div>
 
     <div class="blackbackground" id="welcome">
-      <h1>AJUDE O RIO GRANDE DO SUL</h1>
+      <h1 class="bigtitle">AJUDE O RIO GRANDE DO SUL</h1>
     </div>
     <!--Seção SOBRE O PROJETO-->
     <section id="about">
@@ -66,6 +67,7 @@
       </div>
 
       <img
+        id="canoas"
         src="/static/Images/Sobrevoo_das_áreas_afetadas_pelas_chuvas_em_Canoas.webp"
         alt="Imagem de sobrevoo de Canoas, RS, 2024."
       />
@@ -77,7 +79,7 @@
     <!--Seção HERÓI-->
     <br /><br />
     <div class="blackbackground" id="heroes">
-      <h1>SEÇÃO DE HERÓI</h1>
+      <h1 class="bigtitle">SEÇÃO DE HERÓI</h1>
     </div>
     <section id="herosection">
       <div id="content">
@@ -96,6 +98,7 @@
           </p>
         </div>
       </div>
+      <!-- Lista de pessoa doadores (fictícia) -->
       <ul>
         <li class="person">
           <ion-icon name="person" id="pessoa"></ion-icon>
@@ -111,6 +114,7 @@
         </li>
         <li class="person" id="usernameinput">
           <ion-icon name="person" id="pessoa"></ion-icon>
+          <!-- Input para o usuário -->
           <input
             inputmode="latin-name"
             id="nomeusuario"
@@ -126,9 +130,9 @@
     </section>
     <!--Seção Como ajudar-->
     <div class="blackbackground" id="howtohelp">
-      <h1>COMO AJUDAR</h1>
+      <h1 class="bigtitle">COMO AJUDAR</h1>
     </div>
-    <section id="about">
+    <section>
       <div id="content">
         <h1>Formas de contribuir:</h1>
 
@@ -165,22 +169,221 @@
           doação para uma das instituições confiáveis listadas abaixo.
         </p>
       </div>
-
-      <li>
+      <!-- Lista de instituições -->
+      <li class="instlist">
         Cruz Vermelha Brasileira: Aceita doações financeiras que são usadas para
         suprir necessidades emergenciais como alimentos, água, medicamentos e
         abrigo.
       </li>
 
-      <li>
+      <li class="instlist">
         Defesa Civil: Muitas vezes, aceita doações diretamente ou pode fornecer
         informações sobre onde doar.
       </li>
-      <li>
+      <li class="instlist">
         Organizações Não Governamentais (ONGs): Muitas ONGs locais estão no
         terreno ajudando as vítimas e precisam de recursos financeiros para
         continuar seu trabalho.
       </li>
+    </section>
+    <!--Seção de depoimentos-->
+    <div class="blackbackground" id="depoimentos">
+      <h1 class="bigtitle">DEPOIMENTOS</h1>
+    </div>
+    <section>
+      <div id="content">
+        <div id="tweetbox">
+          <div class="tweet">
+            <div id="pessoatweet"></div>
+            <div class="dadostweet">
+              <p>Ana Siqueira <span>@Ani</span> <br /></p>
+              <p id="textotweet1"></p>
+              <br /><ion-icon
+                name="heart-empty"
+                class="heart"
+                onclick="like()"
+              ></ion-icon>
+              <br />
+            </div>
+          </div>
+        </div>
+        <div id="tweetbox">
+          <div class="tweet">
+            <div id="pessoatweet2"></div>
+            <div class="dadostweet">
+              <p>Pedro Miguel <span>@PM</span> <br /></p>
+              <p id="textotweet2"></p>
+              <br /><ion-icon
+                name="heart-empty"
+                class="heart"
+                onclick="like()"
+              ></ion-icon>
+              <br />
+            </div>
+          </div>
+        </div>
+        <div id="tweetbox">
+          <div class="tweet">
+            <div id="pessoatweet3"></div>
+            <div class="dadostweet">
+              <p>Maria Lourdes <span>@MariaMaria64</span> <br /></p>
+              <p id="textotweet3"></p>
+              <br /><ion-icon
+                name="heart-empty"
+                class="heart"
+                onclick="like()"
+              ></ion-icon>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Seção itens necessários-->
+    <div class="blackbackground" id="itens">
+      <h1 class="bigtitle">ITENS NECESSÁRIOS</h1>
+    </div>
+    <section>
+      <div id="content">
+        <h1>PRINCIPAIS NECESSIDADES</h1>
+        <div class="itemlist">
+          <div class="itemsquare">
+            <img
+              class="item"
+              src="/static/png/water_PNG50183.png"
+              alt="Galão d'gua"
+            />
+            <p class="itemname">Água potável</p>
+          </div>
+
+          <div class="itemsquare">
+            <img class="item" src="/static/png/soap_PNG37.png" alt="Sabonete" />
+            <p class="itemname">Higiene pessoal</p>
+          </div>
+          <div class="itemsquare">
+            <img
+              class="item"
+              src="/static/png/unnamed.png"
+              alt="Carrinho de supermercado"
+            />
+            <p class="itemname">Cesta básica</p>
+          </div>
+
+          <div class="itemsquare">
+            <img
+              class="item"
+              src="/static/png/cleaning.png"
+              alt="Garrada d'gua"
+            />
+            <p class="itemname">Produtos de limpeza</p>
+          </div>
+
+          <div class="itemsquare">
+            <img
+              class="item"
+              src="/static/png/clothes.png"
+              alt="Pilha de roupas"
+            />
+            <p class="itemname">Roupas</p>
+          </div>
+
+          <div class="itemsquare">
+            <img
+              class="item"
+              src="/static/png/dogfood-removebg-pre.png"
+              alt="Ração"
+            />
+            <p class="itemname">Ração animal</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Seção FAQ-->
+    <div class="blackbackground" id="FAQ">
+      <h1 class="bigtitle">FAQ</h1>
+    </div>
+    <section>
+      <div id="content">
+        <h1>Perguntas frequentes</h1>
+        <details class="caixafaq">
+          <summary class="pergunta">
+            <div class="questionmarkcont">
+              <img
+                class="questionmarkicon"
+                src="/static/svg/question-circle-svgrepo-com.svg"
+                alt=""
+              />
+            </div>
+            Eu moro longe, consigo doar mesmo assim?
+          </summary>
+          <p class="resposta">
+            Sim, consegue! Envie doações de itens essenciais, como alimentos,
+            roupas e produtos de higiene, através de transportadoras ou serviços
+            de correio, para pontos de arrecadação. Participe de campanhas de
+            arrecadação em sua cidade que destinam recursos e materiais para as
+            áreas afetadas.
+          </p>
+        </details>
+        <br /><br />
+        <details>
+          <summary>
+            <div>
+              <img
+                class="questionmarkicon"
+                src="/static/svg/question-circle-svgrepo-com.svg"
+                alt=""
+              />
+            </div>
+            O que causou as enchentes no Rio Grande do Sul?
+          </summary>
+          <p class="resposta">
+            As enchentes no Rio Grande do Sul foram causadas por chuvas intensas
+            e contínuas, que resultaram no transbordamento de rios e cursos
+            d'água. As mudanças climáticas e padrões meteorológicos atípicos
+            também contribuíram para o aumento do volume de água.
+          </p>
+        </details>
+        <br /><br />
+        <details>
+          <summary>
+            <div>
+              <img
+                class="questionmarkicon"
+                src="/static/svg/question-circle-svgrepo-com.svg"
+                alt=""
+              />
+            </div>
+            Onde posso fazer doações financeiras?
+          </summary>
+          <p class="resposta">
+            Doações financeiras podem ser feitas diretamente para ONGs
+            confiáveis, a Defesa Civil e campanhas organizadas por entidades
+            reconhecidas. Verifique os sites e redes sociais dessas organizações
+            para obter informações sobre como doar.
+          </p>
+        </details>
+        <br /><br />
+
+        <details>
+          <summary>
+            <div>
+              <img
+                class="questionmarkicon"
+                src="/static/svg/question-circle-svgrepo-com.svg"
+                alt=""
+              />
+            </div>
+            Existem outras maneiras de ajudar além de doações?
+          </summary>
+          <p class="resposta">
+            Sim, você pode ajudar compartilhando informações sobre campanhas de
+            arrecadação em suas redes sociais, organizando eventos de
+            arrecadação de fundos em sua comunidade, e sensibilizando outras
+            pessoas sobre a importância de ajudar as vítimas das enchentes.
+          </p>
+        </details>
+        <br /><br />
+      </div>
     </section>
 
     <script src="/static/script.js"></script>
