@@ -15,7 +15,7 @@ Landing page responsiva para promover um projeto de ajuda às pessoas que estão
 
 Alternativamente:
 
-<a href="raphaelluizph.github.io/Projeto-Cajui/" target="_blank">Clique aqui</a>
+raphaelluizph.github.io/Projeto-Cajui/
 
 ## Tecnologias Utilizadas
 - HTML5
