@@ -21,6 +21,7 @@ Alternativamente:
 - HTML5
 - CSS3 
 - JavaScript 
+- Python // Para geração de áudio
 - Ferramentas de SEO: Lighthouse para análise de desempenho. 
 - Bibliteca Typed.js
 * Não foram utilizados frameworks. 

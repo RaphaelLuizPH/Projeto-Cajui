@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+
 /* Algumas configurações universais que quero aplicar em todo o projeto. 
 Configurações básicas aplicadas ao corpo do documento e variáveis CSS definidas na raiz 
 para facilitar a manutenção e a consistência do design.*/
@@ -50,24 +54,19 @@ body {
 }
 
 #listen:hover {
-  display: flex;
-  align-items: center;
-  margin: auto 1%;
-  border-radius: 9px;
-  font-size: var(--fontsize2);
   width: 150px;
   height: 60px;
-  font-size: var(--fontsize1);
   cursor: pointer;
-  transition: all 0.5s;
+  transition: all 1s;
   background-color: #fbf1b4;
 }
 
 #listen {
+  justify-content: center;
   border: 0;
   display: flex;
   align-items: center;
-  margin: auto 1%;
+  margin: auto;
   border-radius: 9px;
   font-size: var(--fontsize2);
   width: 60px;
@@ -93,7 +92,7 @@ body {
   text-align: center;
   justify-content: center;
   color: #000000;
-  transition: all 0.1s ease-in;
+  transition: all 1s ease-in;
 }
 
 #listen img {
@@ -112,18 +111,7 @@ body {
   align-items: center;
 }
 
-a #doeagora {
-  /* Botão doe agora */
-  font-weight: 900;
-}
 
-#doeagora:hover,
-:focus {
-  color: var(--laranjacajui);
-  background: #ffffff;
-  border: 1px solid #000000;
-  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
-}
 
 #links {
   /*Botões da lista */
@@ -131,17 +119,17 @@ a #doeagora {
   position: fixed;
   font-size: var(--fontsize2);
   pointer-events: auto;
-  transition: all 0.2s;
+  transition: all 0.5s;
 }
 
 /* classe que esconde os botões */
 
 #links .hide {
+  opacity: 0;
   pointer-events: none; /* Faz com que os itens não sejam clicáveis em opacidade 0 */
-  animation-name: linksclose;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
 }
+
+
 
 /* Botão que abre e fecha a lista em estado fechado */
 
@@ -152,15 +140,18 @@ a #doeagora {
 
 #links .open {
   opacity: 1;
-  width: 150px;
+  width: 100px;
 }
+
+
+
 
 #list {
   /* Icone da lista suspensa */
   opacity: 1;
   z-index: 5;
   position: sticky;
-  width: 150px;
+  width: 100px;
   height: 30px;
   font-size: var(--fontsize3);
   background-image: url(../static/svg/menu.svg);
@@ -169,7 +160,7 @@ a #doeagora {
   background-repeat: no-repeat;
   background-color: var(--laranjacajui);
   border-radius: 10px;
-  transition: all 1s;
+  transition: all 0.5s;
 }
 
 #list:hover {
@@ -177,36 +168,37 @@ a #doeagora {
   cursor: pointer;
 }
 
-#list:active {
-  background-color: var(--begecajui);
+
+
+#list:hover  {
+  opacity: 1;
   cursor: pointer;
-  border-radius: 11px;
 }
+
+
 
 /* Botões */
 
-a {
+.botao {
   display: flex;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   padding: 15px;
   margin: 10px;
   transition: all 0.5s;
+  text-decoration: none;
+  color: #fd8900;
 }
 
-a:hover {
+.botao:hover {
   background-color: var(--begecajui);
   cursor: pointer;
 }
 
-a:active {
+.botao:active {
   font-size: var(--fontsize1);
 }
 
-a {
-  text-decoration: none;
-  color: #fd8900;
-}
 
 /* Conteúdo: Textos, imagens */
 
@@ -214,11 +206,16 @@ a {
 
 audio {
   display: none;
-  margin: auto;
 }
 
 section .audio {
+  width: 1%;
+  height: 1%;
+  opacity: 0;
   display: flex;
+  position:sticky;
+  top: 0;
+  z-index: 99;
 }
 
 #textbox {
@@ -228,10 +225,10 @@ section .audio {
   margin: auto;
 }
 
-#content h1 {
+#content h2 {
   font-size: var(--fontsize1);
   display: flex;
-  align-items: left;
+  align-items: center;
   justify-content: center;
 }
 
@@ -243,12 +240,14 @@ section .audio {
 }
 
 h2 {
+  align-self: center;
+  justify-self: center;
   display: flex;
   color: var(--fontcolor);
   text-align: center;
-  justify-content: right;
+  justify-content: center;
   font-size: var(--fontsize3);
-  margin: auto;
+  margin: 1% auto;
 }
 
 .instlist {
@@ -561,6 +560,7 @@ input:focus {
   background-image: url(../static/Images/53700509176_5474838ce1_o.webp);
 }
 
+
 details {
   text-align: left;
   max-width: 550px;
@@ -575,9 +575,13 @@ details {
   transition: all 0.2s;
 }
 
+
+
 details:hover {
   max-width: 600px;
 }
+
+
 
 details[open] summary {
   height: auto;
@@ -630,6 +634,78 @@ summary::marker {
   max-height: 50px;
 }
 
+/* Seção  */ 
+
+#donatenow {
+  background-color: var(--laranjacajui);
+  border-radius: 9px;
+  margin-top: 6%;
+  color: #ffffff;
+}
+
+
+#donatenow h2 {
+  color: rgb(255, 255, 255);
+  margin: 1%;
+  padding: 5px;
+}
+
+
+#doacaocontainer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#pixcontainer {
+  position: relative;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 325px;
+  height: 300px;
+  
+}
+
+#pixcontainer img {
+  position: absolute;
+  border: solid var(--begecajui) 5px;
+  border-radius: 9px;
+  display: flex;
+  margin: 10% auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.botaodoacao {
+  margin: auto;
+  text-transform:uppercase;
+  font-weight: 700;
+  border-radius: 9px;
+  border: 0;
+  font-size: 25px;
+  background-color: var(--begecajui);
+  margin: 5% auto;
+  width: 500px;
+  height: 100px;
+  justify-self: center;
+  align-self: center;
+  transition: all 0.1s;
+}
+
+.botaodoacao:hover{
+  text-decoration: underline;
+  cursor: pointer;
+  width: 525px;
+  height: 125px;
+
+}
+
+
 /* Animação */
 
 @keyframes wiggle {
@@ -669,7 +745,7 @@ summary::marker {
 
 @keyframes menuopen {
   to {
-    width: 150px;
+    width: 100px;
   }
 }
 
@@ -704,13 +780,7 @@ largura da tela do dispositivo. */
     border-radius: 9px;
   }
 
-  section {
-    margin: 10% auto;
-    width: 100%;
-    height: 100%;
-    max-width: 1000px;
-    max-height: 1000px;
-  }
+
 
   #alttext {
     margin: 10%;
@@ -811,4 +881,34 @@ largura da tela do dispositivo. */
   .questionmarkicon {
     display: none;
   }
+
+  .botaodoacao {
+    font-size: var(--fontsize1);
+    margin: 5% auto;
+    width: 200px;
+    height: 80px;
+    justify-self: center;
+    align-self: center;
+    transition: all 1s;
+  }
+  
+  .botaodoacao:hover{
+    width: 210px;
+    height: 100px;
+  
+  }
+
+  #pixcontainer {
+    width: 200px;
+    height: 300px;
+  }
+
+  #donatenow {
+    max-width: 90%;
+    max-height: 80%;
+    background-color: var(--laranjacajui);
+    border-radius: 9px;
+    color: #ffffff;
+  }
+
 }

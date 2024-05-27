@@ -17,35 +17,34 @@
     <title>Ajude o Rio Grande do Sul - Doe, Faça a Diferença!</title>
   </head>
   <body onload="menu(), hide()">
-    <!---Barra no topo da tela-->
-    <div id="navbar">
-      <img src="static/Images/Logo/cajuí2.png" alt="logo cajuí" />
-      <p id="titulo">CAJUÍ + RIO GRANDE DO SUL</p>
-      <button id="listen" onclick="audioon()"> 
-        <img
-          src="static/svg/ouvir.svg"
-          alt="Símbolo de ouvir esta página."
-          
-        />
-        <p id="leituradapagina">Ativar ouça esta página</p>
-       
-      </button>
-    </div>
-    <!--- Botões Navegação-->
-    <div id="links">
-      <ul>
-        <div id="list" onclick="hide(), menu()"></div>
-        <a onclick="home()" class="botao">Início</a>
-        <a onclick="about()" class="botao">Sobre o Projeto</a>
-        <a onclick="heroes()" class="botao">Seção de Herói</a>
-        <a onclick="howtohelp()" class="botao">Como Ajudar</a>
-        <a onclick="depoimentos()" class="botao">Depoimentos</a>
-        <a onclick="itens()" class="botao">Itens Necessários</a>
-        <a onclick="FAQ()" class="botao">FAQ</a>
-        <a class="botao">Doe agora</a>
-      </ul>
-    </div>
-
+    <header>
+      <!---Barra no topo da tela-->
+      <div id="navbar">
+        <img src="static/Images/Logo/cajuí2.png" alt="logo cajuí" />
+        <p id="titulo">CAJUÍ + RIO GRANDE DO SUL</p>
+      </div>
+      <!--- Botões Navegação-->
+      <div id="links">
+        <ul>
+          <div id="list" onclick="hide(), menu()"></div>
+          <p onclick="home()" class="botao">Início</p>
+          <p onclick="about()" class="botao">Sobre o Projeto</p>
+          <p onclick="heroes()" class="botao">Seção de Herói</p>
+          <p onclick="howtohelp()" class="botao">Como Ajudar</p>
+          <p onclick="depoimentos()" class="botao">Depoimentos</p>
+          <p onclick="itens()" class="botao">Itens Necessários</p>
+          <p onclick="FAQ()" class="botao">FAQ</p>
+          <p onclick="doeagora()" class="botao">Doe agora</p>
+          <button id="listen" onclick="audioon()" class="botao">
+            <img
+              src="static/svg/ouvir.svg"
+              alt="Símbolo de ouvir esta página."
+            />
+            <p id="leituradapagina">Ouça esta página: DESATIVADO</p>
+          </button>
+        </ul>
+      </div>
+    </header>
     <div class="blackbackground" id="welcome">
       <h1 class="bigtitle">AJUDE O RIO GRANDE DO SUL</h1>
     </div>
@@ -55,8 +54,8 @@
         <source src="audio/sobre.mp3" type="audio/mpeg" />
       </audio>
       <div id="content">
-        <h1 id="sobre">SOBRE O PROJETO</h1>
-        <div id="textbox">
+        <h2 id="sobre">SOBRE O PROJETO</h2>
+        <article id="textbox">
           <p>
             Em meio aos desafios que enfrentamos, a solidariedade e a união são
             nossas maiores forças. O nosso projeto nasceu com o objetivo de
@@ -70,7 +69,7 @@
             tamanho, tem o poder de trazer alívio e esperança para aqueles que
             mais precisam.
           </p>
-        </div>
+        </article>
       </div>
 
       <img
@@ -94,8 +93,8 @@
         <source src="audio/herói.mp3" type="audio/mpeg" />
       </audio>
       <div id="content">
-        <h1>HERÓIS</h1>
-        <div id="textbox">
+        <h2>HERÓIS</h2>
+        <article id="textbox">
           <p>
             Doar é um ato de heroísmo. Não é necessário ter superpoderes ou uma
             capa para fazer a diferença na vida de alguém. O verdadeiro heroísmo
@@ -107,7 +106,7 @@
             conhecer, é dar sem esperar nada em troca. <br />
             <br />
           </p>
-        </div>
+        </article>
       </div>
       <!-- Lista de pessoa doadores (fictícia) -->
       <ul>
@@ -130,7 +129,6 @@
             inputmode="latin-name"
             id="nomeusuario"
             autocomplete="off"
-            oninput="Nome()"
             type="text"
             style="border: none"
             placeholder=" Seu nome aqui"
@@ -144,45 +142,46 @@
       <h1 class="bigtitle">COMO AJUDAR</h1>
     </div>
     <section>
+      <h2>FORMAS DE CONTRIBUIR:</h2>
       <audio controls class="audio-parent">
         <source src="audio/formas.mp3" type="audio/mpeg" />
       </audio>
-      <div id="content">
-        <h1>Formas de contribuir:</h1>
+      <article>
+        <div id="content">
+          <div id="textbox">
+            <h2>Voluntariado</h2>
+          </div>
+          <p>
+            Se você está na região ou pode se deslocar até lá, considere
+            oferecer seu tempo como voluntário. Muitas equipes precisam de ajuda
+            para distribuir donativos, montar abrigos temporários e oferecer
+            apoio emocional às vítimas.
+            <br />
+            <br />
+          </p>
 
-        <div id="textbox">
-          <h2>Voluntariado</h2>
+          <div id="textbox">
+            <h2>Divulgação</h2>
+          </div>
+          <p>
+            A disseminação de informações corretas e atualizadas também é uma
+            forma de ajudar. Compartilhe nas suas redes sociais as formas de
+            doação e os esforços de socorro, sempre verificando a veracidade das
+            informações para evitar a propagação de fake news.
+            <br />
+            <br />
+          </p>
+          <div id="textbox">
+            <h2>Doações</h2>
+          </div>
+          <p>
+            Organizações locais e nacionais estão arrecadando fundos para
+            fornecer assistência imediata e a longo prazo às vítimas. Considere
+            fazer uma doação para uma das instituições confiáveis listadas
+            abaixo.
+          </p>
         </div>
-
-        <p>
-          Se você está na região ou pode se deslocar até lá, considere oferecer
-          seu tempo como voluntário. Muitas equipes precisam de ajuda para
-          distribuir donativos, montar abrigos temporários e oferecer apoio
-          emocional às vítimas.
-          <br />
-          <br />
-        </p>
-
-        <div id="textbox">
-          <h2>Divulgação</h2>
-        </div>
-        <p>
-          A disseminação de informações corretas e atualizadas também é uma
-          forma de ajudar. Compartilhe nas suas redes sociais as formas de
-          doação e os esforços de socorro, sempre verificando a veracidade das
-          informações para evitar a propagação de fake news.
-          <br />
-          <br />
-        </p>
-        <div id="textbox">
-          <h2>Doações</h2>
-        </div>
-        <p>
-          Organizações locais e nacionais estão arrecadando fundos para fornecer
-          assistência imediata e a longo prazo às vítimas. Considere fazer uma
-          doação para uma das instituições confiáveis listadas abaixo.
-        </p>
-      </div>
+      </article>
       <!-- Lista de instituições -->
       <li class="instlist">
         Cruz Vermelha Brasileira: Aceita doações financeiras que são usadas para
@@ -264,64 +263,94 @@
         <source src="audio/itens.mp3" type="audio/mpeg" />
       </audio>
       <div id="content">
-        <h1>PRINCIPAIS NECESSIDADES</h1>
+        <h2>PRINCIPAIS NECESSIDADES</h2>
         <div class="itemlist">
           <div class="itemsquare">
-            <img
-              loading="lazy"
-              class="item"
-              src="static/png/water_PNG50183.webp"
-              alt="Galão d'gua"
-            />
+            <a
+              href="https://www.google.com/search?q=água+potável&client=opera-gx&hs=1Kj&sca_esv=668e1abf6fdfcd6c&tbm=shop&sxsrf=ADLYWIJgEDv1Sw8EHSvjnh0tR_x6vKQOwA%3A1716833611060&ei=S81UZqv9Aoir1sQPmryNiAs&udm=&oq=Água+Po&gs_lp=Egtwcm9kdWN0cy1jYyIIw4FndWEgUG8qAggAMgUQABiABDIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeSNIzUABYghlwA3gAkAEAmAF7oAHICKoBAzEuObgBA8gBAPgBAZgCDKAC8weYAwCSBwM0LjigB_Eq&sclient=products-cc"
+              target="_blank"
+            >
+              <img
+                loading="lazy"
+                class="item"
+                src="static/png/water_PNG50183.webp"
+                alt="Galão d'gua"
+              />
+            </a>
             <p class="itemname">Água potável</p>
           </div>
 
           <div class="itemsquare">
-            <img
-              loading="lazy"
-              class="item"
-              src="static/png/soap_PNG37.webp"
-              alt="Sabonete"
-            />
+            <a
+              href="https://www.google.com/search?q=kit+higiene+pessoal&client=opera-gx&sca_esv=668e1abf6fdfcd6c&tbm=shop&sxsrf=ADLYWIJR97-Obim-38d6HLHS_4mI1GlbQg%3A1716833848564&ei=OM5UZojIIczQ1sQPtIKbwAQ&udm=&ved=0ahUKEwiIxLm9uK6GAxVMqJUCHTTBBkgQ4dUDCAg&uact=5&oq=kit+higiene+pessoal&gs_lp=Egtwcm9kdWN0cy1jYyITa2l0IGhpZ2llbmUgcGVzc29hbDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgYQABgWGB4yBhAAGBYYHki6H1AAWLwdcAB4AJABAJgB7wGgAYQNqgEGMC4xMy4xuAEDyAEA-AEBmAIOoAKjDcICChAAGIAEGEMYigWYAwCSBwYwLjEzLjGgB4pN&sclient=products-cc"
+              target="_blank"
+            >
+              <img
+                loading="lazy"
+                class="item"
+                src="static/png/soap_PNG37.webp"
+                alt="Sabonete"
+              />
+            </a>
             <p class="itemname">Higiene pessoal</p>
           </div>
           <div class="itemsquare">
-            <img
-              loading="lazy"
-              class="item"
-              src="static/png/unnamed.webp"
-              alt="Carrinho de supermercado"
-            />
+            <a
+              href="https://www.google.com/search?q=cesta+básica&client=opera-gx&hs=rfO&sca_esv=668e1abf6fdfcd6c&tbm=shop&sxsrf=ADLYWIId9BcKBqPoejN6-8mFVZkfqq8nug%3A1716833620792&ei=VM1UZobdL7bW1sQPz-qkyAo&udm=&oq=cesta+&gs_lp=Egtwcm9kdWN0cy1jYyIGY2VzdGEgKgIIAjIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgARIyhVQAFjuCnAAeACQAQCYAeoBoAGBBqoBBTAuNS4xuAEByAEA-AEBmAIGoAKTBsICChAAGIAEGEMYigXCAgwQABiABBhDGIoFGAqYAwCSBwUwLjUuMaAHtx4&sclient=products-cc"
+              target="_blank"
+            >
+              <img
+                loading="lazy"
+                class="item"
+                src="static/png/unnamed.webp"
+                alt="Carrinho de supermercado"
+              />
+            </a>
             <p class="itemname">Cesta básica</p>
           </div>
 
           <div class="itemsquare">
-            <img
-              loading="lazy"
-              class="item"
-              src="static/png/cleaning.webp"
-              alt="Garrada d'gua"
-            />
+            <a
+              href="https://www.google.com/search?q=kit+produtos+de+limpeza&client=opera-gx&sca_esv=668e1abf6fdfcd6c&tbm=shop&sxsrf=ADLYWIJjs-T8_rSkPweyU242SDM78ansIw%3A1716833947546&ei=m85UZrrUIIr05OUPtIKJ8Ag&udm=&oq=kit+produtos+limp&gs_lp=Egtwcm9kdWN0cy1jYyIRa2l0IHByb2R1dG9zIGxpbXAqAggCMgUQABiABDIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHkjaI1AAWJ0TcAJ4AJABAJgBdqABlAuqAQQwLjEzuAEDyAEA-AEBmAIPoALKC8ICChAAGIAEGEMYigWYAwCSBwQyLjEzoAe6Sw&sclient=products-cc"
+              target="_blank"
+            >
+              <img
+                loading="lazy"
+                class="item"
+                src="static/png/cleaning.webp"
+                alt="Garrada d'gua"
+              />
+            </a>
             <p class="itemname">Produtos de limpeza</p>
           </div>
 
           <div class="itemsquare">
-            <img
-              loading="lazy"
-              class="item"
-              src="static/png/clothes.webp"
-              alt="Pilha de roupas"
-            />
+            <a
+              href="https://www.google.com/search?q=kit+roupas&client=opera-gx&sca_esv=668e1abf6fdfcd6c&tbm=shop&sxsrf=ADLYWIL5he-knZ7jEiznoCcp00Znj0pCqQ%3A1716834309278&ei=BdBUZrGmENbK1sQPqt6tqAw&udm=&ved=0ahUKEwjxvJGZuq6GAxVWpZUCHSpvC8UQ4dUDCAg&uact=5&oq=kit+roupas&gs_lp=Egtwcm9kdWN0cy1jYyIKa2l0IHJvdXBhczIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgARI4SdQjRRYlCZwA3gAkAEDmAGIAaAB6Q2qAQQxLjE1uAEDyAEA-AEBmAIPoALJCqgCDsICBBAjGCfCAgoQABiABBhDGIoFwgIHECMYJxjqAsICCxCuARgnGMoDGOoCmAMFiAYBkgcENC4xMaAH91o&sclient=products-cc"
+              target="_blank"
+            >
+              <img
+                loading="lazy"
+                class="item"
+                src="static/png/clothes.webp"
+                alt="Pilha de roupas"
+              />
+            </a>
             <p class="itemname">Roupas</p>
           </div>
 
           <div class="itemsquare">
-            <img
-              loading="lazy"
-              class="item"
-              src="static/png/dogfood-removebg-pre.webp"
-              alt="Ração"
-            />
+            <a
+              href="https://www.google.com.br/search?tbm=shop&hl=pt-BR&psb=1&ved=2ahUKEwjQl-LMuq6GAxVrSUgAHbXCAkoQu-kFegQIABAJ&q=ração&oq=ração&gs_lp=Egtwcm9kdWN0cy1jYyIHcmHDp8Ojb0gAUABYAHAAeACQAQCYAQCgAQCqAQC4AQPIAQCYAgCgAgCYAwCSBwCgBwA&sclient=products-cc"
+              target="_blank"
+            >
+              <img
+                loading="lazy"
+                class="item"
+                src="static/png/dogfood-removebg-pre.webp"
+                alt="Ração"
+              />
+            </a>
             <p class="itemname">Ração animal</p>
           </div>
         </div>
@@ -331,10 +360,12 @@
     <div class="blackbackground" id="FAQ">
       <h1 class="bigtitle">FAQ</h1>
     </div>
-    <section>
+    <section id="questions">
       <div id="content">
-        <h1>Perguntas frequentes</h1>
-
+        <h2>Perguntas frequentes</h2>
+        <audio controls class="audio-parent">
+          <source src="audio/faq.mp3" type="audio/mpeg" />
+        </audio>
         <details class="caixafaq">
           <summary class="pergunta">
             <div class="questionmarkcont">
@@ -416,10 +447,49 @@
         <br /><br />
       </div>
     </section>
-
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-    </style>
+    <!---Seção DOE AGORA-->
+    <section id="donatenow">
+      <audio controls class="audio-parent">
+        <source src="audio/doeagora.mp3" type="audio/mpeg" />
+      </audio>
+      <div id="content">
+        <h2>Doe agora!</h2>
+        <article id="textbox">
+          <p>
+            Doe agora e faça a diferença no Rio Grande do Sul. Sua contribuição
+            é essencial para ajudar as famílias a superar desafios e construir
+            uma comunidade mais forte e unida. Para mais informações sobre como
+            doar e o impacto das doações, acesse as plataformas de doação e
+            sites das organizações locais.
+            <br /><br />
+            O estado do Rio Grande do Sul está enfrentando desafios
+            significativos, afetando muitas famílias que precisam de apoio. A
+            sua doação pode proporcionar a ajuda necessária para superar essas
+            dificuldades.
+          </p>
+        </article>
+        <div id="doacaocontainer">
+          <a
+            href="https://doe.greenpeace.org.br/emergencia-rio-grande-do-sul/p?appeal=22424&entrypoint=p4_banner&_ga=2.169305126.640805223.1716818690-1339625763.1716818690&_gac=1.117292404.1716818690.Cj0KCQjw3tCyBhDBARIsAEY0XNn4l7Y5jY0TqbmmeUeG1wli1B9P-FTiikC2ixhUtHgQWLQTNNKQvAgaApUUEALw_wcB"
+            target="_blank"
+          >
+            <button class="botaodoacao">Greenpeace</button>
+          </a>
+          <a href="https://www.acaodacidadania.org.br" target="_blank">
+            <button class="botaodoacao">Ação da cidadania</button>
+          </a>
+          <a href="https://sosenchentes.rs.gov.br/inicial" target="_blank">
+            <button class="botaodoacao">SOS Enchentes (Gov)</button>
+          </a>
+          <div id="pixcontainer">
+            <img
+              src="static/png/Pix.png"
+              alt="Pix para doações Rio Grande do Sul"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="static/script.js"></script>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>

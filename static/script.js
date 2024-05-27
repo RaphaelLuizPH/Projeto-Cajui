@@ -6,6 +6,22 @@ function hide() {
   let elements = document.getElementsByClassName("botao");
   for (let i = 0; i < elements.length; i++) {
     elements[i].classList.toggle("hide");
+    
+  }
+}
+
+//Verifica se o elemento com o ID "list" contém a classe "closed".
+//Se sim, remove a classe "closed" e alterna para a classe "open".
+//Se não, remove a classe "open" e alterna para a classe "closed".
+
+function menu() {
+  const menu = document.getElementById("list");
+  if (menu.classList.contains("closed")) {
+    menu.classList.remove("closed");
+    menu.classList.toggle("open");
+  } else {
+    menu.classList.remove("open");
+    menu.classList.toggle("closed");
   }
 }
 
@@ -27,14 +43,14 @@ function audioon() {
 function onoff() {
   var audiostatus = document.getElementById("leituradapagina");
 
-  if (audiostatus.textContent === "Ativar ouça esta página") {
-    audiostatus.textContent = "Desativar ouça esta página";
+  if (audiostatus.textContent === "Ouça esta página: ATIVADO") {
+    audiostatus.textContent = "Ouça esta página: DESATIVADO";
   } else {
-    audiostatus.textContent = "Ativar ouça esta página";
+    audiostatus.textContent = "Ouça esta página: ATIVADO";
   }
 }
 
-// Função que faz cada áudio inicia conforma a rolagem da tela
+// Função que faz cada áudio iniciar conforma a rolagem da tela
 
 document.addEventListener("scroll", function () {
   var audioElements = document.querySelectorAll(".audio-parent");
@@ -50,26 +66,12 @@ document.addEventListener("scroll", function () {
     } else {
       if (!audio.paused) {
         audio.pause();
-        audio.currentTime = 1;
       }
     }
   });
 });
 
-//Verifica se o elemento com o ID "list" contém a classe "closed".
-//Se sim, remove a classe "closed" e alterna para a classe "open".
-//Se não, remove a classe "open" e alterna para a classe "closed".
 
-function menu() {
-  const menu = document.getElementById("list");
-  if (menu.classList.contains("closed")) {
-    menu.classList.remove("closed");
-    menu.classList.toggle("open");
-  } else {
-    menu.classList.remove("open");
-    menu.classList.toggle("closed");
-  }
-}
 
 // Função para o funcionamento das curtidas
 // Adiciona um evento de clique a todos os elementos com a classe "heart".
@@ -199,6 +201,36 @@ const sobrenomes = [
   "Lopes",
 ];
 
+// Função para gerar um nome aleatório
+
+function Nome() {
+  /* Controle da velocidade de atualização dos nomes */
+  let updateCount = 0; 
+  const maxUpdates = 20; 
+  const intervalDuration = 1000; 
+
+  const intervalId = setInterval(function () {
+    const nomes = [];
+    for (let i = 0; i < 3; i++) {
+      const primeiroNome = primeirosNomes[Math.floor(Math.random() * primeirosNomes.length)]; // Seleciona primeiro nome aleatório
+      const sobrenome = sobrenomes[Math.floor(Math.random() * sobrenomes.length)]; // Seleciona sobrenome aleatório
+      const sobrenome2 = sobrenomes[Math.floor(Math.random() * sobrenomes.length)]; // Seleciona sobrenome aleatório
+      nomes.push(`${primeiroNome} ${sobrenome} ${sobrenome2} acabou de doar!`); // Junta todos em um só nome e joga no array
+    } // Cria-se 3 nomes de cada vez
+    document.getElementById("nomedapessoa").textContent = nomes[0]; 
+    document.getElementById("nomedapessoa2").textContent = nomes[1];
+    document.getElementById("nomedapessoa3").textContent = nomes[2];
+
+    updateCount++;
+    if (updateCount >= maxUpdates) {
+      clearInterval(intervalId); // Limpar intervalo após 20 updates
+    }
+  }, intervalDuration);
+}
+
+
+
+
 // Acionar Type.js quando o elemento entra na tela
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -247,25 +279,6 @@ function typejs() {
   });
 }
 
-// Função para gerar um nome aleatório
-function Nome() {
-  setInterval(function () {
-    const nomes = [];
-    for (let i = 0; i < 3; i++) {
-      const primeiroNome =
-        primeirosNomes[Math.floor(Math.random() * primeirosNomes.length)];
-      const sobrenome =
-        sobrenomes[Math.floor(Math.random() * sobrenomes.length)];
-      const sobrenome2 =
-        sobrenomes[Math.floor(Math.random() * sobrenomes.length)];
-      nomes.push(`${primeiroNome} ${sobrenome} ${sobrenome2} acabou de doar!`);
-    }
-    // Inserir o nome gerado no parágrafo com id "nomedapessoax"
-    document.getElementById("nomedapessoa").textContent = nomes[0];
-    document.getElementById("nomedapessoa2").textContent = nomes[1];
-    document.getElementById("nomedapessoa3").textContent = nomes[2];
-  }, 1000);
-}
 
 // Código para adicionar o nome do usuário
 
@@ -275,6 +288,7 @@ let nomeuser = document
     // Evento que ouve a tecla enter sendo pressionada
     if (event.key === "Enter") {
       userdonate();
+      Nome();
     }
   });
 
@@ -328,5 +342,10 @@ function itens() {
 
 function FAQ() {
   const itens = document.getElementById("FAQ");
+  itens.scrollIntoView({ block: "start", behavior: "smooth" });
+}
+
+function doeagora() {
+  const itens = document.getElementById("donatenow");
   itens.scrollIntoView({ block: "start", behavior: "smooth" });
 }
