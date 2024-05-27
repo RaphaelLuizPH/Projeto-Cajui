@@ -12,7 +12,7 @@ Landing page responsiva para promover um projeto de ajuda às pessoas que estão
 6. **Keywords**
 7. **Conteúdo de qualidade.**
 8. **Links externos**
-9. **Tempo de carregamento***
+9. **Tempo de carregamento**
 
 ## Como Rodar o Projeto
 1. Clone o repositório.
