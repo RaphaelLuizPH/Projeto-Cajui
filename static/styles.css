@@ -1,4 +1,7 @@
-/* Algumas configurações universais que quero aplicar em todo o projeto */
+/* Algumas configurações universais que quero aplicar em todo o projeto. 
+Configurações básicas aplicadas ao corpo do documento e variáveis CSS definidas na raiz 
+para facilitar a manutenção e a consistência do design.*/
+
 body,
 html {
   font-size: var(--fontsize2);
@@ -11,6 +14,7 @@ html {
 }
 
 :root {
+  --tweetborder: #fd8700bd solid 1px;
   --visibility: none;
   --laranjacajui: #fd8900;
   --begecajui: #fbf1b4;
@@ -19,14 +23,6 @@ html {
   --fontsize2: 15px; /* Tamanho da fonte texto */
   --fontsize4: 64px;
   --fontcolor: black;
-}
-
-/* classe que esconde os botões */
-
-.hide {
-  --display: none;
-  --opacity: 0; /* Opacity 0 permite utilizar transition */
-  transition: all 0.5s ease-in;
 }
 
 body {
@@ -39,14 +35,12 @@ body {
   /* Logo Cajuí */
   padding: 5px;
   display: flex;
-  justify-content: flex-start;
   max-width: 100%;
   max-height: 100px;
 }
 
 #navbar {
   /* Barra no  topo da tela */
-  justify-content: flex-start;
   display: flex;
   text-align: center;
   justify-content: space-between;
@@ -55,7 +49,60 @@ body {
   height: fit-content;
 }
 
-#navbar p {
+#listen:hover {
+  display: flex;
+  align-items: center;
+  margin: auto 1%;
+  border-radius: 9px;
+  font-size: var(--fontsize2);
+  width: 150px;
+  height: 60px;
+  font-size: var(--fontsize1);
+  cursor: pointer;
+  transition: all 0.5s;
+  background-color: #fbf1b4;
+}
+
+#listen {
+  border: 0;
+  display: flex;
+  align-items: center;
+  margin: auto 1%;
+  border-radius: 9px;
+  font-size: var(--fontsize2);
+  width: 60px;
+  height: 60px;
+  font-size: var(--fontsize1);
+  cursor: pointer;
+  transition: all 0.1s;
+  background-color: #ffffff;
+}
+
+#listen:hover #leituradapagina {
+  animation: fadein 2s forwards;
+  opacity: 1;
+  font-size: 12px;
+  display: inline;
+}
+
+#leituradapagina {
+  font-weight: 600;
+  font-size: 12px;
+  display: none;
+  opacity: 0;
+  text-align: center;
+  justify-content: center;
+  color: #000000;
+  transition: all 0.1s ease-in;
+}
+
+#listen img {
+  display: flex;
+  width: 40px;
+  height: 40px;
+}
+
+#navbar #titulo {
   /* Texto: "Cajuí + Rio Grande do Sul */
   color: #ffffff;
   margin: 0% 2%;
@@ -63,7 +110,6 @@ body {
   display: flex;
   text-align: center;
   align-items: center;
-  justify-content: center;
 }
 
 a #doeagora {
@@ -79,59 +125,65 @@ a #doeagora {
   text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
 }
 
+#links {
+  /*Botões da lista */
+  z-index: 5;
+  position: fixed;
+  font-size: var(--fontsize2);
+  pointer-events: auto;
+  transition: all 0.2s;
+}
+
+/* classe que esconde os botões */
+
+#links .hide {
+  pointer-events: none; /* Faz com que os itens não sejam clicáveis em opacidade 0 */
+  animation-name: linksclose;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+/* Botão que abre e fecha a lista em estado fechado */
+
+#links .closed {
+  opacity: 0.4;
+  animation: menuclose 1s ease-in-out forwards;
+}
+
+#links .open {
+  opacity: 1;
+  width: 150px;
+}
+
 #list {
   /* Icone da lista suspensa */
-  margin: auto;
-  opacity: 0.5;
+  opacity: 1;
   z-index: 5;
   position: sticky;
-  width: 60px;
+  width: 150px;
   height: 30px;
-  font-size: 25px;
+  font-size: var(--fontsize3);
   background-image: url(../static/svg/menu.svg);
   background-position: center;
-  background-size:contain;
+  background-size: contain;
   background-repeat: no-repeat;
   background-color: var(--laranjacajui);
   border-radius: 10px;
-  transition: all 0.5s;
+  transition: all 1s;
 }
 
 #list:hover {
   opacity: 1;
-  background-color: rgb(255, 255, 255);
   cursor: pointer;
 }
 
 #list:active {
   background-color: var(--begecajui);
   cursor: pointer;
-  border-radius: 999px;
+  border-radius: 11px;
 }
 
 /* Botões */
-
-button {
-  position: fixed;
-  right: 1%;
-  bottom: 1%;
-  display: block;
-  margin: auto;
-  font-weight: 900;
-  padding: 10px 20px;
-  text-transform: uppercase;
-  border-radius: 8px;
-  font-size: 25px;
-  font-weight: 500;
-  color: var(--laranjacajui);
-  text-shadow: none;
-  background: transparent;
-  cursor: pointer;
-  box-shadow: transparent;
-  border: 1px solid #00000052;
-  transition: 0.5s ease;
-  user-select: none;
-}
 
 a {
   display: flex;
@@ -147,25 +199,6 @@ a:hover {
   cursor: pointer;
 }
 
-#links {
-  /*Botoões da lista */
-  right: 0;
-  z-index: 5;
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: nowrap row;
-  font-size: var(--fontsize2);
-  pointer-events: auto;
-}
-
-#links .hide {
-  pointer-events: none; /* Faz com que os itens não sejam clicáveis em opacidade 0 */
-  opacity: var(--opacity);
-  animation-duration: 0.1s;
-}
-
 a:active {
   font-size: var(--fontsize1);
 }
@@ -178,6 +211,15 @@ a {
 /* Conteúdo: Textos, imagens */
 
 /* Texto + Conteúdo */
+
+audio {
+  display: none;
+  margin: auto;
+}
+
+section .audio {
+  display: flex;
+}
 
 #textbox {
   justify-content: center;
@@ -268,10 +310,8 @@ section #canoas:hover {
 section #canoas {
   display: block;
   margin: 10% auto 0 auto;
-  width: 100%;
-  height: 100%;
   max-width: 80%;
-  max-height: 1000px;
+  max-height: 80%;
   border: var(--laranjacajui) solid 10px;
   border-radius: 9px;
   box-shadow: rgb(255, 255, 255) 5px 5px;
@@ -397,9 +437,9 @@ input:focus {
   margin: 5%;
   min-width: 60px;
   min-height: 60px;
-  border: #0c0c0c solid 5px;
+  border: var(--tweetborder);
   border-radius: 999px;
-  background-image: url(https://cdn.inspiredot.net/wp-content/uploads/2020/02/Check-Out-These-20-Curious-Facts-About-Working-Out-That-Most-People-Don%E2%80%99t-Know-About20-1200x800.png);
+  background-image: url(../static/Images/lana.webp);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -411,9 +451,9 @@ input:focus {
   margin: 5%;
   min-width: 60px;
   min-height: 60px;
-  border: #0c0c0c solid 5px;
+  border: var(--tweetborder);
   border-radius: 999px;
-  background-image: url(https://images.pexels.com/photos/11900800/pexels-photo-11900800.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+  background-image: url(../static/Images/alex.webp);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -425,9 +465,9 @@ input:focus {
   margin: 5%;
   min-width: 60px;
   min-height: 60px;
-  border: #0c0c0c solid 5px;
+  border: var(--tweetborder);
   border-radius: 999px;
-  background-image: url(https://cdn.iportal.ru/news/2015/99/preview/484c4f64c942fd2741fa63e9412dd1280e639642_1000.jpeg);
+  background-image: url(../static/Images/idosos.webp);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -478,7 +518,7 @@ input:focus {
 
 #itens {
   background-size: cover;
-  background-image: url(../static/Images/img_9710_upscayl_4x_ultrasharp.png);
+  background-image: url(../static/Images/img_9710_upscayl_4x_ultrasharp.webp);
 }
 
 .itemlist {
@@ -511,7 +551,7 @@ input:focus {
   transition: all 0.5s;
 }
 .item:hover {
-  animation: wiggle 1s linear infinite;
+  animation: wiggle 2s ease infinite;
 }
 
 /* Seção 6 */
@@ -520,8 +560,6 @@ input:focus {
   background-size: cover;
   background-image: url(../static/Images/53700509176_5474838ce1_o.webp);
 }
-
-
 
 details {
   text-align: left;
@@ -561,11 +599,10 @@ details[open] p {
   border-radius: 9px;
 }
 
-
 summary:after {
   content: "\002B";
   color: var(--laranjacajui);
-  font-size: 20px;
+  font-size: var(--fontsize2);
   text-align: right;
 }
 
@@ -586,8 +623,7 @@ summary::marker {
   display: none;
 }
 
-
-.questionmarkicon{
+.questionmarkicon {
   display: flex;
   align-items: center;
   max-width: 25px;
@@ -597,50 +633,74 @@ summary::marker {
 /* Animação */
 
 @keyframes wiggle {
-  0%,
-  7% {
-    transform: rotateZ(0);
+  0% {
+    opacity: 1;
   }
-  15% {
-    transform: rotateZ(-15deg);
+
+  50% {
+    opacity: 0.2;
   }
-  20% {
-    transform: rotateZ(10deg);
-  }
-  25% {
-    transform: rotateZ(-10deg);
-  }
-  30% {
-    transform: rotateZ(6deg);
-  }
-  35% {
-    transform: rotateZ(-4deg);
-  }
-  40%,
+
   100% {
-    transform: rotateZ(0);
+    opacity: 1;
   }
 }
 
-/* Media Queries */
+@keyframes linksclose {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes menuclose {
+  to {
+    width: 60px;
+  }
+}
+
+@keyframes menuopen {
+  to {
+    width: 150px;
+  }
+}
+
+@keyframes fadein {
+  from { opacity: 0;}
+  to {opacity: 1}
+}
+
+
+
+/* Media Queries para ajustes de responsividade, 
+alterando tamanhos de fonte, espaçamentos e layout conforme a 
+largura da tela do dispositivo. */
 
 @media (max-width: 800px) {
   :root {
     --fontsize1: 20px;
-    --fontsize2: 11px;
+    --fontsize2: 12px;
     --fontsize3: 15px;
     --fontsize4: 48px;
   }
 
   a {
-    font-size: 10px;
+    font-size: var(--fontsize2);
   }
 
   section img {
     display: block;
     margin: 10% auto;
-    width: 80%;
-    height: 100%;
+    max-width: 80%;
+    max-height: 100%;
     border-radius: 9px;
   }
 
@@ -655,13 +715,11 @@ summary::marker {
   #alttext {
     margin: 10%;
     display: flex;
-    font-size: 12px;
+    font-size: var(--fontsize2);
     visibility: visible;
     justify-content: center;
     align-items: flex-end;
   }
-
-
 
   #content p {
     font-size: var(--fontsize2);
@@ -717,12 +775,11 @@ summary::marker {
     animation: none;
   }
 
-
   summary::before {
     padding-right: 15px;
     content: "\002B";
     color: var(--laranjacajui);
-    font-size: 20px;
+    font-size: var(--fontsize3);
     text-align: right;
   }
 
@@ -730,14 +787,13 @@ summary::marker {
     content: none;
   }
 
-  details[open] summary::before{
+  details[open] summary::before {
     content: "\00D7";
   }
 
-  details[open] summary::after{
+  details[open] summary::after {
     content: none;
   }
-
 
   summary {
     justify-content: center;
@@ -745,7 +801,7 @@ summary::marker {
   }
 
   details {
-    max-width: 80%
+    max-width: 80%;
   }
 
   details:hover {

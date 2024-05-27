@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <link
       rel="shortcut icon"
       href="static/Images/Logo/cajuí.png"
@@ -14,23 +13,28 @@
     <link rel="stylesheet" type="text/css" href="static/styles.css" />
     <meta charset="UTF-8" />
 
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ajude o Rio Grande do Sul - Doe, Faça a Diferença!</title>
   </head>
-  <body>
+  <body onload="menu(), hide()">
     <!---Barra no topo da tela-->
     <div id="navbar">
       <img src="static/Images/Logo/cajuí2.png" alt="logo cajuí" />
-      <p>CAJUÍ + RIO GRANDE DO SUL</p>
+      <p id="titulo">CAJUÍ + RIO GRANDE DO SUL</p>
+      <button id="listen" onclick="audioon()"> 
+        <img
+          src="static/svg/ouvir.svg"
+          alt="Símbolo de ouvir esta página."
+          
+        />
+        <p id="leituradapagina">Ativar ouça esta página</p>
+       
+      </button>
     </div>
-    <button id="doeagora">DOE AGORA</button>
     <!--- Botões Navegação-->
-    <div id="links" class="hidden">
+    <div id="links">
       <ul>
-        <div name="list" id="list" onclick="hide()"></div>
+        <div id="list" onclick="hide(), menu()"></div>
         <a onclick="home()" class="botao">Início</a>
         <a onclick="about()" class="botao">Sobre o Projeto</a>
         <a onclick="heroes()" class="botao">Seção de Herói</a>
@@ -47,6 +51,9 @@
     </div>
     <!--Seção SOBRE O PROJETO-->
     <section id="about">
+      <audio controls class="audio-parent">
+        <source src="audio/sobre.mp3" type="audio/mpeg" />
+      </audio>
       <div id="content">
         <h1 id="sobre">SOBRE O PROJETO</h1>
         <div id="textbox">
@@ -67,6 +74,7 @@
       </div>
 
       <img
+        loading="lazy"
         id="canoas"
         src="static/Images/Sobrevoo_das_áreas_afetadas_pelas_chuvas_em_Canoas.webp"
         alt="Imagem de sobrevoo de Canoas, RS, 2024."
@@ -82,6 +90,9 @@
       <h1 class="bigtitle">SEÇÃO DE HERÓI</h1>
     </div>
     <section id="herosection">
+      <audio controls class="audio-parent">
+        <source src="audio/herói.mp3" type="audio/mpeg" />
+      </audio>
       <div id="content">
         <h1>HERÓIS</h1>
         <div id="textbox">
@@ -133,6 +144,9 @@
       <h1 class="bigtitle">COMO AJUDAR</h1>
     </div>
     <section>
+      <audio controls class="audio-parent">
+        <source src="audio/formas.mp3" type="audio/mpeg" />
+      </audio>
       <div id="content">
         <h1>Formas de contribuir:</h1>
 
@@ -191,12 +205,15 @@
       <h1 class="bigtitle">DEPOIMENTOS</h1>
     </div>
     <section>
+      <audio controls class="audio-parent">
+        <source src="audio/depoimentos.mp3" type="audio/mpeg" />
+      </audio>
       <div id="content">
         <div id="tweetbox">
           <div class="tweet">
             <div id="pessoatweet"></div>
             <div class="dadostweet">
-              <p>Ana Siqueira <span>@Ani</span> <br /></p>
+              <p>Lana D <span>@LDosReis</span> <br /></p>
               <p id="textotweet1"></p>
               <br />
               <ion-icon name="heart-empty" class="heart" onclick="like()">
@@ -210,7 +227,7 @@
           <div class="tweet">
             <div id="pessoatweet2"></div>
             <div class="dadostweet">
-              <p>Pedro Miguel <span>@PM</span> <br /></p>
+              <p>Alexandre T <span>@AM8</span> <br /></p>
               <p id="textotweet2"></p>
               <br /><ion-icon
                 name="heart-empty"
@@ -225,7 +242,7 @@
           <div class="tweet">
             <div id="pessoatweet3"></div>
             <div class="dadostweet">
-              <p>Maria Lourdes <span>@MariaMaria64</span> <br /></p>
+              <p>Maria <span>@MariaJoséBenedita1899</span> <br /></p>
               <p id="textotweet3"></p>
               <br /><ion-icon
                 name="heart-empty"
@@ -243,26 +260,36 @@
       <h1 class="bigtitle">ITENS NECESSÁRIOS</h1>
     </div>
     <section>
+      <audio controls class="audio-parent">
+        <source src="audio/itens.mp3" type="audio/mpeg" />
+      </audio>
       <div id="content">
         <h1>PRINCIPAIS NECESSIDADES</h1>
         <div class="itemlist">
           <div class="itemsquare">
             <img
+              loading="lazy"
               class="item"
-              src="static/png/water_PNG50183.png"
+              src="static/png/water_PNG50183.webp"
               alt="Galão d'gua"
             />
             <p class="itemname">Água potável</p>
           </div>
 
           <div class="itemsquare">
-            <img class="item" src="static/png/soap_PNG37.png" alt="Sabonete" />
+            <img
+              loading="lazy"
+              class="item"
+              src="static/png/soap_PNG37.webp"
+              alt="Sabonete"
+            />
             <p class="itemname">Higiene pessoal</p>
           </div>
           <div class="itemsquare">
             <img
+              loading="lazy"
               class="item"
-              src="static/png/unnamed.png"
+              src="static/png/unnamed.webp"
               alt="Carrinho de supermercado"
             />
             <p class="itemname">Cesta básica</p>
@@ -270,8 +297,9 @@
 
           <div class="itemsquare">
             <img
+              loading="lazy"
               class="item"
-              src="static/png/cleaning.png"
+              src="static/png/cleaning.webp"
               alt="Garrada d'gua"
             />
             <p class="itemname">Produtos de limpeza</p>
@@ -279,8 +307,9 @@
 
           <div class="itemsquare">
             <img
+              loading="lazy"
               class="item"
-              src="static/png/clothes.png"
+              src="static/png/clothes.webp"
               alt="Pilha de roupas"
             />
             <p class="itemname">Roupas</p>
@@ -288,8 +317,9 @@
 
           <div class="itemsquare">
             <img
+              loading="lazy"
               class="item"
-              src="static/png/dogfood-removebg-pre.png"
+              src="static/png/dogfood-removebg-pre.webp"
               alt="Ração"
             />
             <p class="itemname">Ração animal</p>
@@ -304,6 +334,7 @@
     <section>
       <div id="content">
         <h1>Perguntas frequentes</h1>
+
         <details class="caixafaq">
           <summary class="pergunta">
             <div class="questionmarkcont">
@@ -313,9 +344,10 @@
                 alt=""
               />
             </div>
+
             Eu moro longe, consigo doar mesmo assim?
           </summary>
-          <p class="resposta">
+          <p>
             Sim, consegue! Envie doações de itens essenciais, como alimentos,
             roupas e produtos de higiene, através de transportadoras ou serviços
             de correio, para pontos de arrecadação. Participe de campanhas de
@@ -335,7 +367,7 @@
             </div>
             O que causou as enchentes no Rio Grande do Sul?
           </summary>
-          <p class="resposta">
+          <p>
             As enchentes no Rio Grande do Sul foram causadas por chuvas intensas
             e contínuas, que resultaram no transbordamento de rios e cursos
             d'água. As mudanças climáticas e padrões meteorológicos atípicos
@@ -354,7 +386,7 @@
             </div>
             Onde posso fazer doações financeiras?
           </summary>
-          <p class="resposta">
+          <p>
             Doações financeiras podem ser feitas diretamente para ONGs
             confiáveis, a Defesa Civil e campanhas organizadas por entidades
             reconhecidas. Verifique os sites e redes sociais dessas organizações
@@ -374,7 +406,7 @@
             </div>
             Existem outras maneiras de ajudar além de doações?
           </summary>
-          <p class="resposta">
+          <p>
             Sim, você pode ajudar compartilhando informações sobre campanhas de
             arrecadação em suas redes sociais, organizando eventos de
             arrecadação de fundos em sua comunidade, e sensibilizando outras
@@ -385,6 +417,10 @@
       </div>
     </section>
 
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    </style>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="static/script.js"></script>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   </body>

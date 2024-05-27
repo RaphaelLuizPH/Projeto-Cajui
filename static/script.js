@@ -1,4 +1,7 @@
-// Função que esconde os links com o clique no botao
+// Função que esconde os links com o clique no botao.
+// Seleciona todos os elementos com a classe "botao" e alterna a classe "hide"
+// para cada um deles.
+
 function hide() {
   let elements = document.getElementsByClassName("botao");
   for (let i = 0; i < elements.length; i++) {
@@ -6,7 +9,72 @@ function hide() {
   }
 }
 
-// Função para o funcionamento das curtidaas
+// Função que controla os áudios da página fazendo os sumir e aparece ao
+// apertar o botão no topo da tela
+
+function audioon() {
+  var audioElements = document.getElementsByClassName("audio-parent");
+
+  for (var i = 0; i < audioElements.length; i++) {
+    audioElements[i].classList.toggle("audio");
+  }
+
+  onoff();
+}
+
+// Função que altera o estado do botão de leitura em voz da página
+
+function onoff() {
+  var audiostatus = document.getElementById("leituradapagina");
+
+  if (audiostatus.textContent === "Ativar ouça esta página") {
+    audiostatus.textContent = "Desativar ouça esta página";
+  } else {
+    audiostatus.textContent = "Ativar ouça esta página";
+  }
+}
+
+// Função que faz cada áudio inicia conforma a rolagem da tela
+
+document.addEventListener("scroll", function () {
+  var audioElements = document.querySelectorAll(".audio-parent");
+
+  audioElements.forEach(function (audio) {
+    var triggerPosition = audio.getBoundingClientRect().top;
+    var screenPosition = window.innerHeight / 2;
+
+    if (triggerPosition < screenPosition && triggerPosition > 0) {
+      if (audio.paused) {
+        audio.play();
+      }
+    } else {
+      if (!audio.paused) {
+        audio.pause();
+        audio.currentTime = 1;
+      }
+    }
+  });
+});
+
+//Verifica se o elemento com o ID "list" contém a classe "closed".
+//Se sim, remove a classe "closed" e alterna para a classe "open".
+//Se não, remove a classe "open" e alterna para a classe "closed".
+
+function menu() {
+  const menu = document.getElementById("list");
+  if (menu.classList.contains("closed")) {
+    menu.classList.remove("closed");
+    menu.classList.toggle("open");
+  } else {
+    menu.classList.remove("open");
+    menu.classList.toggle("closed");
+  }
+}
+
+// Função para o funcionamento das curtidas
+// Adiciona um evento de clique a todos os elementos com a classe "heart".
+// Quando clicado, alterna o atributo "name" entre "heart-empty" e "heart".
+
 function like() {
   document.addEventListener("DOMContentLoaded", function () {
     var icons = document.querySelectorAll(".heart");
@@ -131,7 +199,6 @@ const sobrenomes = [
   "Lopes",
 ];
 
-
 // Acionar Type.js quando o elemento entra na tela
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -140,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const observerOptions = {
     root: null,
     rootMargin: "0px",
-    threshold: 0.5, 
+    threshold: 0.5,
   };
 
   const observer = new IntersectionObserver((entries, observer) => {
@@ -158,7 +225,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // Biblioteca Type.Js
 
 function typejs() {
-
   var typed = new Typed("#textotweet3", {
     strings: [
       "                As doações que recebemos foram essenciais para recomeçar nossas vidas. Com a ajuda de todos, conseguimos roupas, alimentos que nos permitiram manter a dignidade durante esse momento tão difícil. Somos eternamente gratos.",
@@ -180,8 +246,6 @@ function typejs() {
     typeSpeed: 50,
   });
 }
-
-
 
 // Função para gerar um nome aleatório
 function Nome() {
@@ -214,6 +278,10 @@ let nomeuser = document
     }
   });
 
+// Captura o valor do input com o ID "nomeusuario"
+// e exibe uma mensagem personalizada.
+// Se o input estiver vazio, exibe uma mensagem padrão.
+
 function userdonate() {
   const username = document.getElementById("nomeusuario").value;
   if (username.length > 0)
@@ -224,8 +292,6 @@ function userdonate() {
   // Caso a caixa fique vazia, "você" fica no lugar do nome
   else
     document.getElementById("username").textContent = `Você quer ser um herói!`;
-
-  elements[i].classList.toggle("hide");
 }
 
 // Funções que fazem a página rolar até a seção selecionada
@@ -264,4 +330,3 @@ function FAQ() {
   const itens = document.getElementById("FAQ");
   itens.scrollIntoView({ block: "start", behavior: "smooth" });
 }
-
