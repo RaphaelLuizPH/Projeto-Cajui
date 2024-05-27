@@ -11,11 +11,11 @@ Landing page responsiva para promover um projeto de ajuda às pessoas que estão
 
 ## Como Rodar o Projeto
 1. Clone o repositório.
-2. Abra o arquivo `index.html` em um navegador.
-
+2. Abra o arquivo `index.html` em um navegador .
+ 
 Alternativamente:
 
-<a>raphaelluizph.github.io/Projeto-Cajui/</a>
+[Clique aqui](https://raphaelluizph.github.io/Projeto-Cajui/)
 
 ## Tecnologias Utilizadas
 - HTML5
