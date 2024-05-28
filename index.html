@@ -24,17 +24,95 @@
         <p id="titulo">CAJUÍ + RIO GRANDE DO SUL</p>
       </div>
       <!--- Botões Navegação-->
-      <div id="links">
-        <ul>
-          <div id="list" onclick="hide(), menu()"></div>
-          <p onclick="home()" class="botao">Início</p>
-          <p onclick="about()" class="botao">Sobre o Projeto</p>
-          <p onclick="heroes()" class="botao">Seção de Herói</p>
-          <p onclick="howtohelp()" class="botao">Como Ajudar</p>
-          <p onclick="depoimentos()" class="botao">Depoimentos</p>
-          <p onclick="itens()" class="botao">Itens Necessários</p>
-          <p onclick="FAQ()" class="botao">FAQ</p>
-          <p onclick="doeagora()" class="botao">Doe agora</p>
+      <div id="links" role="menu">
+        <menu>
+          <div
+            id="list"
+            onclick="hide(), menu()"
+            role="button"
+            tabindex="0"
+            aria-pressed="false"
+          ></div>
+          <p
+            onclick="home()"
+            onkeydown="home()"
+            class="botao"
+            role="button"
+            aria-pressed="false"
+            tabindex="0"
+          >
+            Início
+          </p>
+          <p
+            onclick="about()"
+            onkeydown="about()"
+            class="botao"
+            role="button"
+            aria-pressed="false"
+            tabindex="0"
+          >
+            Sobre o Projeto
+          </p>
+          <p
+            onclick="heroes()"
+            onkeydown="heroes()"
+            class="botao"
+            role="button"
+            aria-pressed="false"
+            tabindex="0"
+          >
+            Seção de Herói
+          </p>
+          <p
+            onclick="howtohelp()"
+            onkeydown="howtohelp()"
+            class="botao"
+            role="button"
+            aria-pressed="false"
+            tabindex="0"
+          >
+            Como Ajudar
+          </p>
+          <p
+            onclick="depoimentos()"
+            onkeydown="depoimentos()"
+            class="botao"
+            role="button"
+            aria-pressed="false"
+            tabindex="0"
+          >
+            Depoimentos
+          </p>
+          <p
+            onclick="itens()"
+            onkeydown="itens()"
+            class="botao"
+            role="button"
+            aria-pressed="false"
+            tabindex="0"
+          >
+            Itens Necessários
+          </p>
+          <p
+            onclick="FAQ()"
+            onkeydown="FAQ()"
+            class="botao"
+            role="button"
+            aria-pressed="false"
+            tabindex="0"
+          >
+            FAQ
+          </p>
+          <p
+            onclick="doeagora()"
+            onkeydown="doeagora()"
+            class="botao"
+            role="button"
+            aria-pressed="false"
+            tabindex="0"
+          >
+            Doe agora
+          </p>
           <button id="listen" onclick="audioon()" class="botao">
             <img
               src="static/svg/ouvir.svg"
@@ -42,7 +120,7 @@
             />
             <p id="leituradapagina">Ouça esta página: DESATIVADO</p>
           </button>
-        </ul>
+        </menu>
       </div>
     </header>
     <div class="blackbackground" id="welcome">
@@ -126,6 +204,7 @@
           <ion-icon name="person" id="pessoa"></ion-icon>
           <!-- Input para o usuário -->
           <input
+            tabindex="0"
             inputmode="latin-name"
             id="nomeusuario"
             autocomplete="off"
@@ -183,21 +262,23 @@
         </div>
       </article>
       <!-- Lista de instituições -->
-      <li class="instlist">
-        Cruz Vermelha Brasileira: Aceita doações financeiras que são usadas para
-        suprir necessidades emergenciais como alimentos, água, medicamentos e
-        abrigo.
-      </li>
+      <ul>
+        <li class="instlist">
+          Cruz Vermelha Brasileira: Aceita doações financeiras que são usadas
+          para suprir necessidades emergenciais como alimentos, água,
+          medicamentos e abrigo.
+        </li>
 
-      <li class="instlist">
-        Defesa Civil: Muitas vezes, aceita doações diretamente ou pode fornecer
-        informações sobre onde doar.
-      </li>
-      <li class="instlist">
-        Organizações Não Governamentais (ONGs): Muitas ONGs locais estão no
-        terreno ajudando as vítimas e precisam de recursos financeiros para
-        continuar seu trabalho.
-      </li>
+        <li class="instlist">
+          Defesa Civil: Muitas vezes, aceita doações diretamente ou pode
+          fornecer informações sobre onde doar.
+        </li>
+        <li class="instlist">
+          Organizações Não Governamentais (ONGs): Muitas ONGs locais estão no
+          terreno ajudando as vítimas e precisam de recursos financeiros para
+          continuar seu trabalho.
+        </li>
+      </ul>
     </section>
     <!--Seção de depoimentos-->
     <div class="blackbackground" id="depoimentos">
@@ -455,6 +536,13 @@
       <div id="content">
         <h2>Doe agora!</h2>
         <article id="textbox">
+          <div id="pixcontainer" onclick="copiaPix()">
+            <img
+              src="static/png/Pix.png"
+              alt="Pix para doações Rio Grande do Sul"
+              id="pixsosrs"
+            />
+          </div>
           <p>
             Doe agora e faça a diferença no Rio Grande do Sul. Sua contribuição
             é essencial para ajudar as famílias a superar desafios e construir
@@ -468,28 +556,54 @@
             dificuldades.
           </p>
         </article>
-        <div id="doacaocontainer">
-          <a
-            href="https://doe.greenpeace.org.br/emergencia-rio-grande-do-sul/p?appeal=22424&entrypoint=p4_banner&_ga=2.169305126.640805223.1716818690-1339625763.1716818690&_gac=1.117292404.1716818690.Cj0KCQjw3tCyBhDBARIsAEY0XNn4l7Y5jY0TqbmmeUeG1wli1B9P-FTiikC2ixhUtHgQWLQTNNKQvAgaApUUEALw_wcB"
-            target="_blank"
-          >
-            <button class="botaodoacao">Greenpeace</button>
-          </a>
-          <a href="https://www.acaodacidadania.org.br" target="_blank">
-            <button class="botaodoacao">Ação da cidadania</button>
+        <div class="caixalogos">
+          <a href="https://sosenchentes.rs.gov.br/inicial" target="_blank">
+            <img
+              src="/static/png/Gov.br_logo.svg.png"
+              alt="Logo governo brasileiro"
+            />
+            <p>SOS ENCHENTES</p>
           </a>
           <a href="https://sosenchentes.rs.gov.br/inicial" target="_blank">
-            <button class="botaodoacao">SOS Enchentes (Gov)</button>
-          </a>
-          <div id="pixcontainer">
             <img
-              src="static/png/Pix.png"
-              alt="Pix para doações Rio Grande do Sul"
+              id="LogoAçãodaCidadania"
+              src="static/png/488095_111161.webp"
+              alt="Logo Ação da Cidadania"
             />
-          </div>
+            <p>Ação da Cidadania</p>
+          </a>
+          <a
+            href="https://doe.greenpeace.org.br/emergencia-rio-grande-do-sul/p?appeal=22424&entrypoint=p4_banner&_ga=2.199133224.640805223.1716818690-1339625763.1716818690&_gac=1.58645848.1716819513.Cj0KCQjw3tCyBhDBARIsAEY0XNn4l7Y5jY0TqbmmeUeG1wli1B9P-FTiikC2ixhUtHgQWLQTNNKQvAgaApUUEALw_wcB"
+            target="_blank"
+          >
+            <img
+              src="static/svg/greenpeace_logo_icon_169063.png"
+              alt="Logo Greenpeace"
+            />
+            <p>Greenpeace</p>
+          </a>
         </div>
       </div>
     </section>
+
+    <div id="footbar">
+      <div class="socialmediacontainer">
+        <div class="iconname">
+          <ion-icon name="logo-linkedin" class="socialmedia"> </ion-icon>
+          <p>Linkedin</p>
+        </div>
+        <div class="iconname">
+          <ion-icon name="logo-instagram" class="socialmedia"></ion-icon>
+          <p>Linkedin</p>
+        </div>
+        <div class="iconname">
+          <ion-icon name="logo-whatsapp" class="socialmedia"></ion-icon>
+          <p>Linkedin</p>
+
+        </div>
+      </div>
+    </div>
+
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="static/script.js"></script>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>

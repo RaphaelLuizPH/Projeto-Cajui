@@ -308,7 +308,26 @@ function userdonate() {
     document.getElementById("username").textContent = `Você quer ser um herói!`;
 }
 
+
+
+// Copia o código do PIX para área de transferência
+
+function copiaPix() {
+  navigator.clipboard.writeText("00020101021126360014br.gov.bcb.pix0114929588000001385204000053039865802BR5923SOS - Rio Grande do Sul6012PORTO ALEGRE62070503***6304A3D3");
+  window.alert("PIX copiado para a área de transferência!");
+}
+
+
+
+
+
+
+
 // Funções que fazem a página rolar até a seção selecionada
+
+
+
+
 
 function home() {
   const start = document.getElementById("welcome");
