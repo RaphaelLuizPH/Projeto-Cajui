@@ -6,7 +6,6 @@ function hide() {
   let elements = document.getElementsByClassName("botao");
   for (let i = 0; i < elements.length; i++) {
     elements[i].classList.toggle("hide");
-    
   }
 }
 
@@ -70,8 +69,6 @@ document.addEventListener("scroll", function () {
     }
   });
 });
-
-
 
 // Função para o funcionamento das curtidas
 // Adiciona um evento de clique a todos os elementos com a classe "heart".
@@ -205,19 +202,22 @@ const sobrenomes = [
 
 function Nome() {
   /* Controle da velocidade de atualização dos nomes */
-  let updateCount = 0; 
-  const maxUpdates = 20; 
-  const intervalDuration = 1000; 
+  let updateCount = 0;
+  const maxUpdates = 20;
+  const intervalDuration = 1000;
 
   const intervalId = setInterval(function () {
     const nomes = [];
     for (let i = 0; i < 3; i++) {
-      const primeiroNome = primeirosNomes[Math.floor(Math.random() * primeirosNomes.length)]; // Seleciona primeiro nome aleatório
-      const sobrenome = sobrenomes[Math.floor(Math.random() * sobrenomes.length)]; // Seleciona sobrenome aleatório
-      const sobrenome2 = sobrenomes[Math.floor(Math.random() * sobrenomes.length)]; // Seleciona sobrenome aleatório
+      const primeiroNome =
+        primeirosNomes[Math.floor(Math.random() * primeirosNomes.length)]; // Seleciona primeiro nome aleatório
+      const sobrenome =
+        sobrenomes[Math.floor(Math.random() * sobrenomes.length)]; // Seleciona sobrenome aleatório
+      const sobrenome2 =
+        sobrenomes[Math.floor(Math.random() * sobrenomes.length)]; // Seleciona sobrenome aleatório
       nomes.push(`${primeiroNome} ${sobrenome} ${sobrenome2} acabou de doar!`); // Junta todos em um só nome e joga no array
     } // Cria-se 3 nomes de cada vez
-    document.getElementById("nomedapessoa").textContent = nomes[0]; 
+    document.getElementById("nomedapessoa").textContent = nomes[0];
     document.getElementById("nomedapessoa2").textContent = nomes[1];
     document.getElementById("nomedapessoa3").textContent = nomes[2];
 
@@ -227,9 +227,6 @@ function Nome() {
     }
   }, intervalDuration);
 }
-
-
-
 
 // Acionar Type.js quando o elemento entra na tela
 
@@ -279,7 +276,6 @@ function typejs() {
   });
 }
 
-
 // Código para adicionar o nome do usuário
 
 let nomeuser = document
@@ -308,26 +304,52 @@ function userdonate() {
     document.getElementById("username").textContent = `Você quer ser um herói!`;
 }
 
-
-
 // Copia o código do PIX para área de transferência
 
 function copiaPix() {
-  navigator.clipboard.writeText("00020101021126360014br.gov.bcb.pix0114929588000001385204000053039865802BR5923SOS - Rio Grande do Sul6012PORTO ALEGRE62070503***6304A3D3");
+  navigator.clipboard.writeText(
+    "00020101021126360014br.gov.bcb.pix0114929588000001385204000053039865802BR5923SOS - Rio Grande do Sul6012PORTO ALEGRE62070503***6304A3D3"
+  );
   window.alert("PIX copiado para a área de transferência!");
 }
 
+var slideIndex = 0;
+carrossel();
 
+function carrossel() {
+  var i;
+  var x = document.getElementsByClassName("slides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {
+    slideIndex = 1;
+  }
+  x[slideIndex - 1].style.display = "block";
+  setTimeout(carrossel, 2000);
+}
 
+// Faz com que a outline de objetos selecionáveis apareça apenas quando a navegação é por teclado
 
+document.addEventListener("DOMContentLoaded", () => {
+  let Mouse = false;
 
+  const handleMouseDown = () => {
+    Mouse = true;
+    document.body.classList.add("mouse");
+  };
 
+  const handleKeyDown = () => {
+    Mouse = false;
+    document.body.classList.remove("mouse");
+  };
+
+  document.addEventListener("mousedown", handleMouseDown);
+  document.addEventListener("keydown", handleKeyDown);
+});
 
 // Funções que fazem a página rolar até a seção selecionada
-
-
-
-
 
 function home() {
   const start = document.getElementById("welcome");

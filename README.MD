@@ -35,7 +35,7 @@ Alternativamente:
 
 As imagens utilizadas nesse projeto não são de minha autoria e estão todas disponíveis na internet. 
 
-Os ícones utilizados nesse projeto são do serviço [Ionicons](https://ionic.io/ionicons/v4). 
+ícones: [Ionicons](https://ionic.io/ionicons/v4) e Font-Awesome. 
 
 ## Cores 
 

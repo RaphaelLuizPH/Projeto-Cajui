@@ -13,16 +13,26 @@ html {
   font-style: normal;
 }
 
+[tabindex]:focus {
+  outline: var(--focusoutline);
+  border-radius: 9px;
+}
+
+.mouse [tabindex]:focus {
+  outline: none;
+}
+
 :root {
   --tweetborder: #f29100 solid 1px;
   --visibility: none;
   --laranjacajui: #f29100;
-  --begecajui: #fbf1b4;
+  --begecajui: #fff5e5;
   --fontsize1: 25px; /* Tamanho da fonte título */
   --fontsize3: 20px;
   --fontsize2: 15px; /* Tamanho da fonte texto */
   --fontsize4: 64px;
   --fontcolor: black;
+  --focusoutline: solid #633714;
 }
 
 body {
@@ -35,8 +45,9 @@ body {
   /* Logo Cajuí */
   padding: 5px;
   display: flex;
-  max-width: 100%;
-  max-height: 100px;
+  width: 120px;
+  height: 150px;
+  object-fit: contain;
 }
 
 #navbar {
@@ -87,7 +98,7 @@ body {
   opacity: 0;
   text-align: center;
   justify-content: center;
-  color: #000000;
+  color: var(--fontcolor);
   transition: all 1s ease-in;
 }
 
@@ -107,18 +118,19 @@ body {
   align-items: center;
 }
 
-#links {
+.show {
   /*Botões da lista */
   z-index: 5;
   position: fixed;
   font-size: var(--fontsize2);
   pointer-events: auto;
   transition: all 0.5s;
+  animation: fadein 1s forwards;
 }
 
 /* classe que esconde os botões */
 
-.hide {
+#links .hide {
   opacity: 0;
   pointer-events: none;
   animation: linksclose 0.5s ease-in-out forwards; /* Faz com que os itens não sejam clicáveis em opacidade 0 */
@@ -132,12 +144,11 @@ body {
 }
 
 #links .open {
-  opacity: 1;
-  width: 100px;
-  transition: all 0.5s;
+  transition: all 1s;
   animation-name: sandwich;
   animation-duration: 1s;
   animation-fill-mode: forwards;
+  background-image: url(../static/svg/x.svg);
 }
 
 #list {
@@ -242,10 +253,11 @@ h2 {
 .instlist {
   color: white;
   list-style: none;
-  margin: 5%;
+  margin: 5% auto;
   background-color: var(--laranjacajui);
   padding: 5%;
   transition: all 0.5s ease-in;
+  max-width: 70vw;
 }
 
 #alttext {
@@ -276,10 +288,12 @@ section {
 
 .blackbackground {
   margin: 0 0 10% 0;
+  border-bottom: var(--laranjacajui) solid 5px;
   background-blend-mode: color;
   background-color: #000000a8;
+  background-position: center;
   width: 100%;
-  height: 1259px;
+  height: 520px;
   display: flex;
 }
 
@@ -290,24 +304,26 @@ section:hover #alttext {
   visibility: visible;
 }
 
-section #canoas:hover {
-  border: #ffff solid 10px;
-  box-shadow: var(--laranjacajui) 5px 5px;
-}
 
-section #canoas {
-  display: block;
+.slides {
+  display: flex;
   margin: 10% auto 0 auto;
-  width: 80%;
-  height: 80%;
-  object-fit: contain;
+  width: 700px;
+  height: 500px;
+  object-fit: cover;
   border: var(--laranjacajui) solid 10px;
   border-radius: 9px;
   box-shadow: rgb(255, 255, 255) 5px 5px;
-  transition: all 0.5s;
 }
 
+.slides img {
+  object-fit: contain;
+}
+
+
 #welcome {
+  height: 1250px;
+  background-position: initial;
   background-size: cover;
   background-image: url(../static/Images/fundo-social_solidariedade-doacoes-rio-grande-do-sul-carreta-empresa-kothe_fm_-51.webp);
 }
@@ -418,6 +434,7 @@ input:focus {
 .tweet:hover {
   box-shadow: #05050533 5px 5px 50px;
   width: 600px;
+  transform: scale(1.2);
   height: max-content;
 }
 
@@ -496,7 +513,7 @@ input:focus {
 }
 
 .heart:active {
-  opacity: 0.5;
+  transform: scale(1.5);
 }
 
 .heart:hover {
@@ -656,12 +673,13 @@ summary::marker {
 }
 
 #pixsosrs {
-  transition: all 0.4s;
+  transition: all 1s;
 }
 
 #pixcontainer #pixsosrs:hover {
+  transform: scale(3);
   background-color: var(--laranjacajui);
-  cursor: grab;
+  cursor: copy;
 }
 
 #pixcontainer img {
@@ -685,6 +703,7 @@ summary::marker {
   display: flex;
   flex-flow: row nowrap;
   padding: 50px;
+  transition: all 0.54s;
 }
 
 .caixalogos a {
@@ -701,11 +720,18 @@ summary::marker {
   width: 250px;
   height: 100px;
   object-fit: contain;
+  transition: all 0.5s;
+}
+
+.caixalogos img:hover {
+  width: 300px;
+  height: 150px;
 }
 
 /* Footer */
 
 #footbar {
+  position: relative;
   display: flex;
   justify-content: space-evenly;
   margin-top: 250px;
@@ -721,7 +747,6 @@ summary::marker {
 }
 
 .socialmediacontainer {
-  border: solid;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -744,21 +769,54 @@ summary::marker {
   width: 20px;
   height: 20px;
   margin: 2% auto;
-  background-color: var(--begecajui);
+  transition: all 0.5s;
+}
+
+.iconname:visited {
+  color: #ffffff;
 }
 
 .iconname:hover {
-  color: var(--begecajui);
+  color: black;
+  width: 25px;
 }
 
 #footerh3 {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
   position: absolute;
   align-self: flex-end;
   width: 400px;
-  height: 100px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+}
+
+#importantlinks {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  white-space: nowrap;
+  height: 11vh;
+  width: 25vw;
+  text-align: left;
+}
+
+#importantlinks a {
+  color: #000000;
+  text-decoration: none;
+}
+
+#importantlinks a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#importantlinks li {
+  list-style: none;
+  justify-self: left;
 }
 
 /* Animação */
@@ -806,21 +864,23 @@ summary::marker {
 }
 
 @keyframes fadein {
-  from {
+  0% {
     opacity: 0;
+    display: flex;
   }
-  to {
+  100% {
     opacity: 1;
+    display: flex;
   }
 }
 
 @keyframes sandwich {
-  from {
-    background-position: center;
+  0% {
+    width: 50px;
   }
 
-  to {
-    background-position: left;
+  100% {
+    width: 100px;
   }
 }
 
@@ -836,17 +896,25 @@ largura da tela do dispositivo. */
     --fontsize4: 48px;
   }
 
-  a {
-    font-size: var(--fontsize2);
+
+  .slides {
+    text-align: center;
+    display: flex;
+    margin: 10% auto 0 auto;
+    width: 300px;
+    height: 500px;
+    object-fit: cover;
+    border: var(--laranjacajui) solid 10px;
+    border-radius: 9px;
+    box-shadow: rgb(255, 255, 255) 5px 5px;
+    transition: all 0.5s;
   }
 
-  section img {
-    display: block;
-    margin: 10% auto;
-    max-width: 80%;
-    max-height: 100%;
-    border-radius: 9px;
-  }
+.slides img {
+  display: flex;
+  justify-content: center;
+  transform: rotate(0.5turn);
+}
 
   #alttext {
     margin: 10%;
@@ -911,6 +979,12 @@ largura da tela do dispositivo. */
     animation: none;
   }
 
+  .tweet:hover {
+    box-shadow: #05050533 5px 5px 50px;
+    transform: scale(1.1);
+    height: max-content;
+  }
+
   details summary::after {
     margin-left: 2%;
   }
@@ -941,10 +1015,14 @@ largura da tela do dispositivo. */
     height: 300px;
   }
 
+  #pixcontainer #pixsosrs:hover {
+    transform: scale(1);
+  }
+
   .caixalogos {
     margin: auto;
-
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-evenly;
     flex-flow: column;
   }
 
@@ -956,7 +1034,15 @@ largura da tela do dispositivo. */
   .caixalogos img {
     width: 150px;
     height: 50px;
+    margin: 15% auto;
     object-fit: contain;
+  }
+
+  .caixalogos img:hover {
+    transform: scale(1.1);
+    object-fit: contain;
+    width: 150px;
+    height: 50px;
   }
 
   .iconname {

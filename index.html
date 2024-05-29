@@ -25,7 +25,7 @@
         <p id="titulo">CAJUÍ + RIO GRANDE DO SUL</p>
       </div>
       <!--- Botões Navegação-->
-      <div id="links" role="menu">
+      <div id="links" role="menu" class="show">
         <menu>
           <div
             id="list"
@@ -33,12 +33,13 @@
             role="button"
             tabindex="0"
             aria-pressed="false"
+            aria-label="Abrir menu"
           ></div>
           <p
             onclick="home()"
             onkeydown="home()"
             class="botao"
-            role="button"
+            role="menuitem"
             aria-pressed="false"
             tabindex="0"
           >
@@ -48,7 +49,7 @@
             onclick="about()"
             onkeydown="about()"
             class="botao"
-            role="button"
+            role="menuitem"
             aria-pressed="false"
             tabindex="0"
           >
@@ -58,7 +59,7 @@
             onclick="heroes()"
             onkeydown="heroes()"
             class="botao"
-            role="button"
+            role="menuitem"
             aria-pressed="false"
             tabindex="0"
           >
@@ -68,7 +69,7 @@
             onclick="howtohelp()"
             onkeydown="howtohelp()"
             class="botao"
-            role="button"
+            role="menuitem"
             aria-pressed="false"
             tabindex="0"
           >
@@ -78,7 +79,7 @@
             onclick="depoimentos()"
             onkeydown="depoimentos()"
             class="botao"
-            role="button"
+            role="menuitem"
             aria-pressed="false"
             tabindex="0"
           >
@@ -88,7 +89,7 @@
             onclick="itens()"
             onkeydown="itens()"
             class="botao"
-            role="button"
+            role="menuitem"
             aria-pressed="false"
             tabindex="0"
           >
@@ -98,7 +99,7 @@
             onclick="FAQ()"
             onkeydown="FAQ()"
             class="botao"
-            role="button"
+            role="menuitem"
             aria-pressed="false"
             tabindex="0"
           >
@@ -108,13 +109,13 @@
             onclick="doeagora()"
             onkeydown="doeagora()"
             class="botao"
-            role="button"
+            role="menuitem"
             aria-pressed="false"
             tabindex="0"
           >
             Doe agora
           </p>
-          <button id="listen" onclick="audioon()" class="botao">
+          <button id="listen" onclick="audioon()" class="botao" role="menuitem">
             <img
               src="static/svg/ouvir.svg"
               alt="Símbolo de ouvir esta página."
@@ -124,14 +125,11 @@
         </menu>
       </div>
     </header>
-    <div class="blackbackground" id="welcome">
+    <div class="blackbackground" id="welcome" tabindex="0">
       <h1 class="bigtitle">AJUDE O RIO GRANDE DO SUL</h1>
     </div>
     <!--Seção SOBRE O PROJETO-->
-    <section id="about">
-      <audio controls class="audio-parent">
-        <source src="audio/sobre.mp3" type="audio/mpeg" />
-      </audio>
+    <section id="about" tabindex="0">
       <div id="content">
         <h2 id="sobre">SOBRE O PROJETO</h2>
         <article id="textbox">
@@ -148,27 +146,61 @@
             tamanho, tem o poder de trazer alívio e esperança para aqueles que
             mais precisam.
           </p>
+          <audio controls class="audio-parent" tabindex="-1">
+            <source src="audio/sobre.mp3" type="audio/mpeg" />
+          </audio>
         </article>
       </div>
 
-      <img
-        loading="lazy"
-        id="canoas"
-        src="static/Images/Sobrevoo_das_áreas_afetadas_pelas_chuvas_em_Canoas.webp"
-        alt="Imagem de sobrevoo de Canoas, RS, 2024."
-      />
+      <div id="canoas">
+        <img
+          class="slides"
+          loading="lazy"
+          src="static/Images/CidadedeItaquariRSAntes.webp"
+          alt="Imagem de satélite Itaquati, RS, antes."
+        />
+        <img
+          class="slides"
+          loading="lazy"
+          src="static/Images/CidadedeItaquariRSDepois.webp"
+          alt="Imagem de satélite Itaquati, RS, depois."
+        />
+        <img
+          class="slides"
+          loading="lazy"
+          src="static/Images/portoalegreAntes.webp"
+          alt="Imagem de satélite Itaquati, RS, depois."
+        />
+        <img
+          class="slides"
+          loading="lazy"
+          src="static/Images/portoalegreDepois.webp"
+          alt="Imagem de satélite Itaquati, RS, depois."
+        />
+        <img
+          class="slides"
+          loading="lazy"
+          src="static/png/678cd663-c008-4120-91ad-45ca19bedbce.png"
+          alt="Imagem de satélite Itaquati, RS, depois."
+        />
+        <img
+          class="slides"
+          loading="lazy"
+          src="static/png/87f4b488-895f-4202-a99a-d5efc98d7673.png"
+          alt="Imagem de satélite Itaquati, RS, depois."
+        />
+      </div>
       <p id="alttext">
-        Imagem de sobrevôo de Canoas, Rio Grande do Sul, 2024 Foto: Ricardo
-        Stuckert / PR Direitos autorais: Ricardo Stuckert / PR
+        Imagens de satélite do Rio Grande do Sul antes e depois das enchentes
       </p>
     </section>
     <!--Seção HERÓI-->
     <br /><br />
-    <div class="blackbackground" id="heroes">
+    <div class="blackbackground" id="heroes" tabindex="0">
       <h1 class="bigtitle">SEÇÃO DE HERÓI</h1>
     </div>
-    <section id="herosection">
-      <audio controls class="audio-parent">
+    <section id="herosection" tabindex="0">
+      <audio controls class="audio-parent" tabindex="-1">
         <source src="audio/herói.mp3" type="audio/mpeg" />
       </audio>
       <div id="content">
@@ -218,12 +250,12 @@
       <p id="username"></p>
     </section>
     <!--Seção Como ajudar-->
-    <div class="blackbackground" id="howtohelp">
+    <div class="blackbackground" id="howtohelp" tabindex="0">
       <h1 class="bigtitle">COMO AJUDAR</h1>
     </div>
-    <section>
+    <section tabindex="0">
       <h2>FORMAS DE CONTRIBUIR:</h2>
-      <audio controls class="audio-parent">
+      <audio controls class="audio-parent" tabindex="-1">
         <source src="audio/formas.mp3" type="audio/mpeg" />
       </audio>
       <article>
@@ -282,11 +314,11 @@
       </ul>
     </section>
     <!--Seção de depoimentos-->
-    <div class="blackbackground" id="depoimentos">
+    <div class="blackbackground" id="depoimentos" tabindex="0">
       <h1 class="bigtitle">DEPOIMENTOS</h1>
     </div>
-    <section>
-      <audio controls class="audio-parent">
+    <section tabindex="0">
+      <audio controls class="audio-parent" tabindex="-1">
         <source src="audio/depoimentos.mp3" type="audio/mpeg" />
       </audio>
       <div id="content">
@@ -337,11 +369,11 @@
       </div>
     </section>
     <!--Seção itens necessários-->
-    <div class="blackbackground" id="itens">
+    <div class="blackbackground" id="itens" tabindex="0">
       <h1 class="bigtitle">ITENS NECESSÁRIOS</h1>
     </div>
-    <section>
-      <audio controls class="audio-parent">
+    <section tabindex="0">
+      <audio controls class="audio-parent" tabindex="-1">
         <source src="audio/itens.mp3" type="audio/mpeg" />
       </audio>
       <div id="content">
@@ -439,13 +471,13 @@
       </div>
     </section>
     <!--Seção FAQ-->
-    <div class="blackbackground" id="FAQ">
+    <div class="blackbackground" id="FAQ" tabindex="0">
       <h1 class="bigtitle">FAQ</h1>
     </div>
-    <section id="questions">
+    <section id="questions" tabindex="0">
       <div id="content">
         <h2>Perguntas frequentes</h2>
-        <audio controls class="audio-parent">
+        <audio controls class="audio-parent" tabindex="-1">
           <source src="audio/faq.mp3" type="audio/mpeg" />
         </audio>
         <details class="caixafaq">
@@ -530,8 +562,8 @@
       </div>
     </section>
     <!---Seção DOE AGORA-->
-    <section id="donatenow">
-      <audio controls class="audio-parent">
+    <section id="donatenow" tabindex="0">
+      <audio controls class="audio-parent" tabindex="-1">
         <source src="audio/doeagora.mp3" type="audio/mpeg" />
       </audio>
       <div id="content">
@@ -565,7 +597,7 @@
             />
             <p>SOS ENCHENTES</p>
           </a>
-          <a href="https://sosenchentes.rs.gov.br/inicial" target="_blank">
+          <a href="https://www.acaodacidadania.org.br" target="_blank">
             <img
               id="LogoAçãodaCidadania"
               src="static/png/488095_111161.webp"
@@ -593,6 +625,7 @@
           href="https://www.linkedin.com/company/cajuicollab/"
           class="iconname"
           target="_blank"
+          aria-label="Linkedin"
         >
           <i class="fa-brands fa-linkedin fa-2x" class="socialmedia"></i>
           <p>Linkedin</p>
@@ -601,6 +634,7 @@
           href="https://www.instagram.com/cajuicollab/"
           class="iconname"
           target="_blank"
+          aria-label="Instagram"
         >
           <i
             class="fa-brands fa-square-instagram fa-2x"
@@ -613,6 +647,7 @@
           href="https://api.whatsapp.com/send?phone=556198061150&text=Olá!%20Desejo%20realizar%20um%20orçamento."
           class="iconname"
           target="_blank"
+          aria-label="Contato"
         >
           <i class="fa-brands fa-square-whatsapp fa-2x" class="socialmedia"></i>
           <p>Contato</p>
@@ -622,14 +657,40 @@
           href="https://www.behance.net/cajuicollab"
           class="iconname"
           target="_blank"
+          aria-label="Behance"
         >
           <i class="fa-brands fa-square-behance fa-2x" class="socialmedia"></i>
           <p>Behance</p>
         </a>
       </div>
-          <div id="footerh3">
-      <p>Todos os Direitos Reservados ℗</p>
-    </div>
+      <div id="importantlinks">
+        <ul>
+          <li>
+            <a href="https://defesacivil.rs.gov.br/avisos-e-alertas"
+              >Avisos e alertas</a
+            >
+          </li>
+          <li><a href="https://sosenchentes.rs.gov.br/abrigos">Abrigos</a></li>
+          <li>
+            <a href="https://sosenchentes.rs.gov.br/como-ser-voluntario"
+              >Seja voluntário</a
+            >
+          </li>
+          <li>
+            <a href="https://sosenchentes.rs.gov.br/combate-a-desinformacao"
+              >Combate à desinformação</a
+            >
+          </li>
+          <li>
+            <a href="https://sosenchentes.rs.gov.br/como-pedir-socorro"
+              >Como pedir socorro</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div id="footerh3">
+        <p>Todos os Direitos Reservados ℗</p>
+      </div>
     </div>
 
     <script
