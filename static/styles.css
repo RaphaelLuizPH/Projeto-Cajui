@@ -121,7 +121,7 @@ body {
 .hide {
   opacity: 0;
   pointer-events: none;
-  animation: menuclose 0.5s ease-in-out forwards; /* Faz com que os itens não sejam clicáveis em opacidade 0 */
+  animation: linksclose 0.5s ease-in-out forwards; /* Faz com que os itens não sejam clicáveis em opacidade 0 */
 }
 
 /* Botão que abre e fecha a lista em estado fechado */
@@ -298,8 +298,9 @@ section #canoas:hover {
 section #canoas {
   display: block;
   margin: 10% auto 0 auto;
-  max-width: 80%;
-  max-height: 80%;
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
   border: var(--laranjacajui) solid 10px;
   border-radius: 9px;
   box-shadow: rgb(255, 255, 255) 5px 5px;
@@ -639,8 +640,8 @@ summary::marker {
 }
 
 .doacaobotao {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 #pixcontainer {
@@ -672,22 +673,22 @@ summary::marker {
 }
 
 #LogoAçãodaCidadania {
+  height: 200px;
   object-fit: cover;
 }
 
 .caixalogos {
   margin: auto;
   text-align: center;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: space-around;
   display: flex;
   flex-flow: row nowrap;
-  height: 50px;
-  width: 99%;
-  border-radius: 999px;
-  
+  padding: 50px;
 }
 
 .caixalogos a {
+  height: fit-content;
   font-weight: 900;
   font-size: var(--fontsize2);
   white-space: nowrap;
@@ -697,44 +698,67 @@ summary::marker {
 }
 
 .caixalogos img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 250px;
+  height: 100px;
+  object-fit: contain;
 }
 
 /* Footer */
 
 #footbar {
   display: flex;
-  justify-content: left;
+  justify-content: space-evenly;
   margin-top: 250px;
-  height: 200px;
+  height: 300px;
   width: 100%;
   background-color: var(--laranjacajui);
 }
 
 #footbar p {
-display: flex;
+  display: flex;
+  padding: 10px;
+  font-size: var(--fontsize2);
 }
 
 .socialmediacontainer {
+  border: solid;
   display: flex;
-  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-flow: row nowrap;
   width: 100%;
-  height: 100%;
+  height: 100px;
 }
 
 .socialmedia {
-  font-size: 30px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: left;
 }
 
 .iconname {
-  text-align: center;
+  text-decoration: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  margin: 2% auto;
+  background-color: var(--begecajui);
+}
+
+.iconname:hover {
+  color: var(--begecajui);
+}
+
+#footerh3 {
+  position: absolute;
+  align-self: flex-end;
+  width: 400px;
+  height: 100px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 1%;
-  width: 200px;
-  height: 20px;
+  align-items: flex-end;
 }
 
 /* Animação */
@@ -760,6 +784,7 @@ display: flex;
 
   50% {
     opacity: 0;
+    display: none;
   }
 
   100% {
@@ -918,15 +943,32 @@ largura da tela do dispositivo. */
 
   .caixalogos {
     margin: auto;
-    width: 200px;
-    height: 100px;
+
     justify-content: space-between;
     flex-flow: column;
   }
 
+  #LogoAçãodaCidadania {
+    height: 100px;
+    object-fit: cover;
+  }
+
   .caixalogos img {
-    max-width: 100px;
-    max-height: 50px;
+    width: 150px;
+    height: 50px;
+    object-fit: contain;
+  }
+
+  .iconname {
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: left;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin: auto;
   }
 }
 
