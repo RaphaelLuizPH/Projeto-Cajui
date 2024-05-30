@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 /* Algumas configurações universais que quero aplicar em todo o projeto. 
 Configurações básicas aplicadas ao corpo do documento e variáveis CSS definidas na raiz 
 para facilitar a manutenção e a consistência do design.*/
@@ -13,9 +15,6 @@ html {
   font-style: normal;
 }
 
-
-
-
 [tabindex]:focus {
   outline: var(--focusoutline);
   border-radius: 9px;
@@ -23,6 +22,7 @@ html {
 
 .mouse [tabindex]:focus {
   outline: none;
+  border-radius: 0;
 }
 
 :root {
@@ -307,7 +307,6 @@ section:hover #alttext {
   visibility: visible;
 }
 
-
 .slides {
   display: flex;
   margin: 10% auto 0 auto;
@@ -322,7 +321,6 @@ section:hover #alttext {
 .slides img {
   object-fit: contain;
 }
-
 
 #welcome {
   height: 1250px;
@@ -773,6 +771,7 @@ summary::marker {
   height: 20px;
   margin: 2% auto;
   transition: all 0.5s;
+  color: #ffffff;
 }
 
 .iconname:visited {
@@ -899,7 +898,6 @@ largura da tela do dispositivo. */
     --fontsize4: 48px;
   }
 
-
   .slides {
     text-align: center;
     display: flex;
@@ -913,11 +911,11 @@ largura da tela do dispositivo. */
     transition: all 0.5s;
   }
 
-.slides img {
-  display: flex;
-  justify-content: center;
-  transform: rotate(0.5turn);
-}
+  .slides img {
+    display: flex;
+    justify-content: center;
+    transform: rotate(0.5turn);
+  }
 
   #alttext {
     margin: 10%;
@@ -956,7 +954,6 @@ largura da tela do dispositivo. */
     width: 300px;
   }
 
-
   .itemlist {
     justify-content: space-between;
     flex-flow: column nowrap;
@@ -994,7 +991,6 @@ largura da tela do dispositivo. */
     height: fit-content;
     width: 300px;
   }
-
 
   .tweet:hover {
     box-shadow: #05050533 5px 5px 50px;
@@ -1074,5 +1070,3 @@ largura da tela do dispositivo. */
     margin: auto;
   }
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
