@@ -28,7 +28,8 @@ Alternativamente:
 - JavaScript 
 - Python // Para geração de áudio
 - Ferramentas de SEO: Lighthouse para análise de desempenho. 
-- Bibliteca Typed.js
+- Biblioteca Typed.js
+- Google Fonts
 * Não foram utilizados frameworks. 
 
 
