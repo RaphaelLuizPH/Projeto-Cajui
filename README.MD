@@ -31,17 +31,43 @@ Alternativamente:
 - Bibliteca Typed.js
 * Não foram utilizados frameworks. 
 
+
+## Lighthouse
+
+![Pontuação Lighthouse desktop](https://i.imgur.com/vLKUOPO.png)
+![Pontuação Lighthouse mobile](https://i.imgur.com/4fgacUL.png)
+
+
 ## Das mídias utilizadas
 
 As imagens utilizadas nesse projeto não são de minha autoria e estão todas disponíveis na internet. 
 
 ícones: [Ionicons](https://ionic.io/ionicons/v4) e Font-Awesome. 
 
+
+
+
+
+
 ## Cores 
 
 O projeto usa as cores da paleta da Cajuí. 
 
-- Laranja: #fd8900
-- Bege: #fbf1b4
+- Laranja: #f29100
+- Bege: #fff5e5
 - Branco: #ffffff
 
+
+## Features notáveis
+
+1. Menu de navegação flutuante, permitindo que o usuário navegue pels tópicos da página facilmente. 
+2. Botão de "escute esta página" que ativa leitura por áudio dos tópicos. 
+
+
+
+## Mockups
+
+
+![Mockup site desktop](https://i.imgur.com/PHVm5Op.jpeg)
+
+![Mockup site mobile](https://i.imgur.com/OBleQbS.jpeg)
