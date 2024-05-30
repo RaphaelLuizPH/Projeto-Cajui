@@ -48,4 +48,4 @@ O projeto usa as cores da paleta da Cajuí.
 ## Mockups
 
 
-![Mockup site desktop](https://i.imgur.com/hKF2rza.jpeg)
+![Mockup site desktop](https://i.imgur.com/PHVm5Op.jpeg)
