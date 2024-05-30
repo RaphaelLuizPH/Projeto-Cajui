@@ -57,6 +57,14 @@ O projeto usa as cores da paleta da Cajuí.
 - Bege: #fff5e5
 - Branco: #ffffff
 
+
+## Features notáveis
+
+1. Menu de navegação flutuante, permitindo que o usuário navegue pels tópicos da página facilmente. 
+2. Botão de "escute esta página" que ativa leitura por áudio dos tópicos. 
+
+
+
 ## Mockups
 
 
