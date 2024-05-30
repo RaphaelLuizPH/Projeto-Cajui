@@ -53,8 +53,8 @@ As imagens utilizadas nesse projeto não são de minha autoria e estão todas di
 
 O projeto usa as cores da paleta da Cajuí. 
 
-- Laranja: #fd8900
-- Bege: #fbf1b4
+- Laranja: #f29100
+- Bege: #fff5e5
 - Branco: #ffffff
 
 ## Mockups
