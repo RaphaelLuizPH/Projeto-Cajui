@@ -316,6 +316,8 @@ function copiaPix() {
 var slideIndex = 0;
 carrossel();
 
+// Função para o funcionamento do carrossel
+
 function carrossel() {
   var i;
   var x = document.getElementsByClassName("slides");
@@ -326,7 +328,7 @@ function carrossel() {
   if (slideIndex > x.length) {
     slideIndex = 1;
   }
-  x[slideIndex - 1].style.display = "block";
+  x[slideIndex - 1].style.display = "flex";
   setTimeout(carrossel, 2000);
 }
 

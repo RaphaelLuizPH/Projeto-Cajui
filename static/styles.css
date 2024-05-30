@@ -4,14 +4,17 @@ para facilitar a manutenção e a consistência do design.*/
 
 body,
 html {
+  overflow-x: hidden;
   font-size: var(--fontsize2);
-  /*scroll-behavior: smooth;*/
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: normal;
 }
+
+
+
 
 [tabindex]:focus {
   outline: var(--focusoutline);
@@ -251,9 +254,9 @@ h2 {
 }
 
 .instlist {
-  color: white;
+  color: rgb(0, 0, 0);
   list-style: none;
-  margin: 5% auto;
+  margin: 5% 0;
   background-color: var(--laranjacajui);
   padding: 5%;
   transition: all 0.5s ease-in;
@@ -677,7 +680,7 @@ summary::marker {
 }
 
 #pixcontainer #pixsosrs:hover {
-  transform: scale(3);
+  transform: scale(1.8);
   background-color: var(--laranjacajui);
   cursor: copy;
 }
@@ -934,6 +937,7 @@ largura da tela do dispositivo. */
 
   #FAQ {
     background-position: center;
+    margin-top: 80%;
   }
 
   #welcome {
@@ -948,11 +952,17 @@ largura da tela do dispositivo. */
     width: 300px;
   }
 
+  .person {
+    width: 300px;
+  }
+
+
   .itemlist {
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-flow: column nowrap;
     display: flex;
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 1000px;
   }
 
   .itemsquare {
@@ -978,6 +988,13 @@ largura da tela do dispositivo. */
   .item:hover {
     animation: none;
   }
+
+  .tweet {
+    box-shadow: #05050533 5px 5px 50px;
+    height: fit-content;
+    width: 300px;
+  }
+
 
   .tweet:hover {
     box-shadow: #05050533 5px 5px 50px;
