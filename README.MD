@@ -31,11 +31,23 @@ Alternativamente:
 - Bibliteca Typed.js
 * Não foram utilizados frameworks. 
 
+
+## Lighthouse
+
+![Pontuação Lighthouse desktop](https://i.imgur.com/vLKUOPO.png)
+![Pontuação Lighthouse mobile](https://i.imgur.com/4fgacUL.png)
+
+
 ## Das mídias utilizadas
 
 As imagens utilizadas nesse projeto não são de minha autoria e estão todas disponíveis na internet. 
 
 ícones: [Ionicons](https://ionic.io/ionicons/v4) e Font-Awesome. 
+
+
+
+
+
 
 ## Cores 
 
