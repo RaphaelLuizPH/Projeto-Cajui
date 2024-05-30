@@ -729,6 +729,37 @@ summary::marker {
   height: 150px;
 }
 
+
+#backtotop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#backtotopbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--laranjacajui);
+  width: 250px;
+  height: 50px;
+  transition: all 0.5s;
+}
+
+#backtotopbutton p{
+  font-weight: 600;
+  font-size: 0px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+#backtotopbutton:hover p {
+  font-size: 12px;
+  opacity: 1;
+  display: flex;
+  margin: 5%;
+}
+
 /* Footer */
 
 #footbar {
