@@ -45,3 +45,7 @@ O projeto usa as cores da paleta da Cajuí.
 - Bege: #fbf1b4
 - Branco: #ffffff
 
+## Mockups
+
+
+![Mockup site desktop](https://imgur.com/a/BOSQ0ul)
