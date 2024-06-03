@@ -261,6 +261,7 @@ h2 {
   padding: 5%;
   transition: all 0.5s ease-in;
   max-width: 70vw;
+  
 }
 
 #alttext {
@@ -538,6 +539,7 @@ input:focus {
 }
 
 .itemsquare {
+  
   text-align: center;
   padding: 15px;
   max-width: 300px;
