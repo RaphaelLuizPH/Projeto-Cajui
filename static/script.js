@@ -49,7 +49,7 @@ function onoff() {
   }
 }
 
-// Função que faz cada áudio iniciar conforma a rolagem da tela
+// Função que faz cada áudio iniciar conforme a rolagem da tela
 
 document.addEventListener("scroll", function () {
   var audioElements = document.querySelectorAll(".audio-parent");
@@ -313,10 +313,13 @@ function copiaPix() {
   window.alert("PIX copiado para a área de transferência!");
 }
 
+
+
+// Função para o funcionamento do carrossel
+
 var slideIndex = 0;
 carrossel();
 
-// Função para o funcionamento do carrossel
 
 function carrossel() {
   var i;
